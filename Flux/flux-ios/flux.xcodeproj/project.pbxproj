@@ -1,0 +1,818 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		038AA3BA79AB4540DD040654 /* VozBuzonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DBCD6C151C34EE93956D2 /* VozBuzonView.swift */; };
+		CA11BB22CC33DD44EE550003 /* VozSettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11BB22CC33DD44EE550004 /* VozSettingsSheet.swift */; };
+		06B65A34E6AA0E631F4DBAEE /* Geist-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EB412CE3D2597238A4828CB /* Geist-Light.otf */; };
+		08D6FA520E70506A36E461BB /* fluxWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 922EF1659926B432B75112E1 /* fluxWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		09942F46C598725E13B092A9 /* GeistMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39DA42BEADACFE85DF9C1273 /* GeistMono-Regular.otf */; };
+		0B2546596F0FB015245CE28E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DE48CB14E57C800A704DC /* Colors.swift */; };
+		0FE556F5063E59502F612904 /* fluxWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E63E983CBBD22FD369551C /* fluxWidgets.swift */; };
+		154F66D233CA15DB8980B41D /* FluxProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87B34F160F12F99487C8EBF /* FluxProfile.swift */; };
+		168CD582939A122FAD15F353 /* ProximityPairingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2CDDC86C6296C5F1053135 /* ProximityPairingService.swift */; };
+		1AEBE38626714C777EE48F6A /* Geist-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71186F318DA93365AFEC89AC /* Geist-ExtraBold.otf */; };
+		1ECB3B35F612779BE41A7AAD /* FluxMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7863777E1C78FF2194188 /* FluxMonitorService.swift */; };
+		2AD045AE977391416BC90757 /* ChildProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB19EBB3B9048B683132A97 /* ChildProfile.swift */; };
+		30B6D2CBE24E9B4362C7E498 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD844CEBE98B07FE5F343C8 /* Signal.swift */; };
+		3BDD5CF77F8084701D87E0A2 /* GeistMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8C4776CAF3E2138EDBD1A1C /* GeistMono-Medium.otf */; };
+		3E28F172B7A55EEBFF6DC9DC /* PatternSignature3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D94D89C6E83F155189F21C /* PatternSignature3DView.swift */; };
+		3F2EB5D678F076C58FF0F9E6 /* Geist-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D00788F0D33E18BE262C3F94 /* Geist-Black.otf */; };
+		43B27F9365FDB49F69332517 /* FluxLiquidTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0F48CE70AB43EC644655F /* FluxLiquidTabBar.swift */; };
+		4BAAE14728BFC1313F74FD01 /* FluxEventQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12F98D073EB153F1A594E39 /* FluxEventQueue.swift */; };
+		58C8E1757797C79AE9775ED9 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A44754D8148E3A496B988 /* Typography.swift */; };
+		58EAD4E3BB5486A8AF8B2C27 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5728AE32BF1D297C16FEEF /* ScannerView.swift */; };
+		5AAC26F08DED7200CF6C8F27 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A665EAF0C20BB4F62795E0F /* DashboardView.swift */; };
+		5E39FB7DEEBE3846ABDEE6B1 /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D18AF57EE0124B2770CA647 /* Geist-Regular.otf */; };
+		5E90940C1DE44A0344142CAD /* Inter-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 352C85E9E86AC8985564D6C2 /* Inter-SemiBold.otf */; };
+		6763C68AA8BF5BC96FCB2F5E /* Geist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8DCB794CF7BCF250FEFA24C /* Geist-Bold.otf */; };
+		6811F595745068E53B9F97CE /* fluxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8A7631F7E8DF3ADC0FDD9 /* fluxApp.swift */; };
+		76710BA44ED3B6481EF24A90 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BC6702942E9D1DAC7863F /* OnboardingFlow.swift */; };
+		7863B8525BA2C1DB6E399935 /* WeProtectAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B61C80DAB8216632F2F4271 /* WeProtectAI.swift */; };
+		7976EEDDBB20B62FB94DD030 /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CB3FE788DA5D48647FDCFD /* ForumView.swift */; };
+		7BCAE3F22E9AA7E0F402A756 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69A44754D8148E3A496B988 /* Typography.swift */; };
+		81158C95D70287602120656B /* PairingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91750AC974A8FA9B4D0F5846 /* PairingModels.swift */; };
+		8395ACDC1C59C317113473AC /* FluxBiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3407C3F6C559B6CDD3798B3 /* FluxBiometricAuthService.swift */; };
+		87F9DAFA5BBF97B75344148A /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764365F37F8A31283E990334 /* CameraService.swift */; };
+		88A86402E7ECF7C6D68839CF /* ProximityPairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183B19A852CD96B01CA9171 /* ProximityPairingView.swift */; };
+		8FCFA92912FF6EE971ADB406 /* FluxRiskActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B72A00338597182D816140 /* FluxRiskActivityAttributes.swift */; };
+		97128FFA964526867E583B09 /* AlertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC72AE06E353600AC3A36958 /* AlertDetailView.swift */; };
+		983341466A9D75C67DBC31C5 /* Inter-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5AD0839A0E28D6D74731E3E9 /* Inter-Bold.otf */; };
+		9F9BE253A9744E2FBBE016FC /* Caveat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13F6CEB5BB622BF050F32E9 /* Caveat.ttf */; };
+		A257CFCC0FB9AB82A141C0B6 /* VozLiquidTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83448654BCF02112FCD09511 /* VozLiquidTabBar.swift */; };
+		A9F5BB3559AB400BA6770000 /* FluxUsageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A725668E7AFB55D70F7135A /* FluxUsageEvent.swift */; };
+		ACCF1B5ECB24E937AB27B8E6 /* VozTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96553D0BC0B4932B8B270266 /* VozTabView.swift */; };
+		AD9743383BB9B06F551E09FE /* BaselineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612B790452B064D511CDF8A /* BaselineView.swift */; };
+		CA11BB22CC33DD44EE550005 /* TrendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11BB22CC33DD44EE550006 /* TrendDetailView.swift */; };
+		B0352BA3423BD67DB8840F2C /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1383F8490506E13A73145B8D /* Inter-Regular.otf */; };
+		B0CDAED31EBEB001D29419B6 /* FluxRiskActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B72A00338597182D816140 /* FluxRiskActivityAttributes.swift */; };
+		B1C1875F8C45905D1F24C4A1 /* PatternFootprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271419AFD165AA76E6294D2 /* PatternFootprint.swift */; };
+		B66EB6CC91A2B23AD6213FB6 /* WeProtectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A17F8323C00E7E0869089A /* WeProtectView.swift */; };
+		BE5BEDE7CA35A286F222E942 /* RuleBasedBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87E7B6B62EFD9DFFA850F0 /* RuleBasedBackend.swift */; };
+		C1D13B2EBCAA8D5244700502 /* FluxLiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940554DD7FFA73B76D26323 /* FluxLiveActivityManager.swift */; };
+		C215AB986481844E337DBF67 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934DE48CB14E57C800A704DC /* Colors.swift */; };
+		C968C6F0C678A373ABE20DED /* ParentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD0D99C94287EC437618CC /* ParentTabView.swift */; };
+		CA6A5470E25519C7E2470CC0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B872D06A11F96B93B4F7E3 /* SettingsView.swift */; };
+		CFC0A24AEE9E46AB8BD6F40F /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4A32D868D2658FBF9924E /* CommunityView.swift */; };
+		D3FBC74FB08187F43662C565 /* FluxKeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E407417DDF7AED0CEA8A93C7 /* FluxKeychainService.swift */; };
+		D51981B580EC4AF272CDB2A3 /* FluxBackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7894420B4BAA3ABFBC0F69 /* FluxBackendClient.swift */; };
+		7714776937100000000A0001 /* TikTokClassifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7714776937100000000A0002 /* TikTokClassifierService.swift */; };
+		D91E399F4C8308B1E00B5374 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065E6DB66535661A798C39F3 /* Spacing.swift */; };
+		D9D2975E26E33714930B1218 /* FluxRiskLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2800755EBD137F2ED72C3 /* FluxRiskLiveActivity.swift */; };
+		DF4D8DB60FD75649ED5765B9 /* ProfilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387051E5986AC467E6BEC0E /* ProfilePickerView.swift */; };
+		CA11BB22CC33DD44EE550001 /* CreateProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11BB22CC33DD44EE550002 /* CreateProfileSheet.swift */; };
+		E1334A635509D676B04B7CF3 /* GeistMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B14A602028294557D776D571 /* GeistMono-Bold.otf */; };
+		E2EC497CA1655FCBAEB6E825 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3869D2724157B072174DD2 /* ProfileStore.swift */; };
+		E89E668120926BB020FB8552 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9F5037AEE7400100EFC5F /* Inter-Medium.otf */; };
+		E8E6069644AB7FADA7E305DE /* FluxMockScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68072E34AB6B7A913A21C70E /* FluxMockScenarios.swift */; };
+		ECB92844FCA1E6080712DCBB /* Geist-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8B7507166133C5D3F8F3690 /* Geist-SemiBold.otf */; };
+		FC45256D901195ECCE9474B9 /* FoundationModelsBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC2CC3E354589B40C756A3 /* FoundationModelsBackend.swift */; };
+		FDD492142B122478A9AD2110 /* Geist-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0E300277F2EDD83DBD8A55CE /* Geist-Medium.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85DABE19E68C27A8E07723D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B6E56BD70C18E40311E17F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0B47DA3A64F50B0E4794EF7;
+			remoteInfo = fluxWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		950C8273846B02ED05D9C556 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				08D6FA520E70506A36E461BB /* fluxWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		065E6DB66535661A798C39F3 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		0A665EAF0C20BB4F62795E0F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		0E300277F2EDD83DBD8A55CE /* Geist-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Medium.otf"; sourceTree = "<group>"; };
+		10D94D89C6E83F155189F21C /* PatternSignature3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternSignature3DView.swift; sourceTree = "<group>"; };
+		1183B19A852CD96B01CA9171 /* ProximityPairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityPairingView.swift; sourceTree = "<group>"; };
+		1383F8490506E13A73145B8D /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
+		17B08C7AD2624327EE958F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1B61C80DAB8216632F2F4271 /* WeProtectAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeProtectAI.swift; sourceTree = "<group>"; };
+		1D7894420B4BAA3ABFBC0F69 /* FluxBackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxBackendClient.swift; sourceTree = "<group>"; };
+		7714776937100000000A0002 /* TikTokClassifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokClassifierService.swift; sourceTree = "<group>"; };
+		1FC0F48CE70AB43EC644655F /* FluxLiquidTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxLiquidTabBar.swift; sourceTree = "<group>"; };
+		34CB3FE788DA5D48647FDCFD /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
+		352C85E9E86AC8985564D6C2 /* Inter-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.otf"; sourceTree = "<group>"; };
+		39DA42BEADACFE85DF9C1273 /* GeistMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Regular.otf"; sourceTree = "<group>"; };
+		4AD844CEBE98B07FE5F343C8 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		4B87E7B6B62EFD9DFFA850F0 /* RuleBasedBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBasedBackend.swift; sourceTree = "<group>"; };
+		4D2CDDC86C6296C5F1053135 /* ProximityPairingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityPairingService.swift; sourceTree = "<group>"; };
+		4EB412CE3D2597238A4828CB /* Geist-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Light.otf"; sourceTree = "<group>"; };
+		5AD0839A0E28D6D74731E3E9 /* Inter-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.otf"; sourceTree = "<group>"; };
+		5EE9F5037AEE7400100EFC5F /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
+		68072E34AB6B7A913A21C70E /* FluxMockScenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxMockScenarios.swift; sourceTree = "<group>"; };
+		6C5728AE32BF1D297C16FEEF /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		6DDD0D99C94287EC437618CC /* ParentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentTabView.swift; sourceTree = "<group>"; };
+		71186F318DA93365AFEC89AC /* Geist-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ExtraBold.otf"; sourceTree = "<group>"; };
+		73E2800755EBD137F2ED72C3 /* FluxRiskLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxRiskLiveActivity.swift; sourceTree = "<group>"; };
+		743DBCD6C151C34EE93956D2 /* VozBuzonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VozBuzonView.swift; sourceTree = "<group>"; };
+		CA11BB22CC33DD44EE550004 /* VozSettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VozSettingsSheet.swift; sourceTree = "<group>"; };
+		764365F37F8A31283E990334 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		81B872D06A11F96B93B4F7E3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		83448654BCF02112FCD09511 /* VozLiquidTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VozLiquidTabBar.swift; sourceTree = "<group>"; };
+		87A17F8323C00E7E0869089A /* WeProtectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeProtectView.swift; sourceTree = "<group>"; };
+		8940554DD7FFA73B76D26323 /* FluxLiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxLiveActivityManager.swift; sourceTree = "<group>"; };
+		8A725668E7AFB55D70F7135A /* FluxUsageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxUsageEvent.swift; sourceTree = "<group>"; };
+		8AC0BB334657F1C2E799E6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D18AF57EE0124B2770CA647 /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
+		91750AC974A8FA9B4D0F5846 /* PairingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingModels.swift; sourceTree = "<group>"; };
+		922EF1659926B432B75112E1 /* fluxWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = fluxWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9271419AFD165AA76E6294D2 /* PatternFootprint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternFootprint.swift; sourceTree = "<group>"; };
+		934DE48CB14E57C800A704DC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		96553D0BC0B4932B8B270266 /* VozTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VozTabView.swift; sourceTree = "<group>"; };
+		A8B7507166133C5D3F8F3690 /* Geist-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-SemiBold.otf"; sourceTree = "<group>"; };
+		AAB19EBB3B9048B683132A97 /* ChildProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfile.swift; sourceTree = "<group>"; };
+		B13F6CEB5BB622BF050F32E9 /* Caveat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Caveat.ttf; sourceTree = "<group>"; };
+		B14A602028294557D776D571 /* GeistMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Bold.otf"; sourceTree = "<group>"; };
+		B387051E5986AC467E6BEC0E /* ProfilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePickerView.swift; sourceTree = "<group>"; };
+		CA11BB22CC33DD44EE550002 /* CreateProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileSheet.swift; sourceTree = "<group>"; };
+		BEF8A7631F7E8DF3ADC0FDD9 /* fluxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fluxApp.swift; sourceTree = "<group>"; };
+		C09BC6702942E9D1DAC7863F /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		C6E63E983CBBD22FD369551C /* fluxWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fluxWidgets.swift; sourceTree = "<group>"; };
+		C8B72A00338597182D816140 /* FluxRiskActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxRiskActivityAttributes.swift; sourceTree = "<group>"; };
+		C8C4776CAF3E2138EDBD1A1C /* GeistMono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Medium.otf"; sourceTree = "<group>"; };
+		CC72AE06E353600AC3A36958 /* AlertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailView.swift; sourceTree = "<group>"; };
+		D00788F0D33E18BE262C3F94 /* Geist-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Black.otf"; sourceTree = "<group>"; };
+		D12F98D073EB153F1A594E39 /* FluxEventQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxEventQueue.swift; sourceTree = "<group>"; };
+		D612B790452B064D511CDF8A /* BaselineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineView.swift; sourceTree = "<group>"; };
+		CA11BB22CC33DD44EE550006 /* TrendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDetailView.swift; sourceTree = "<group>"; };
+		D69A44754D8148E3A496B988 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		D8DCB794CF7BCF250FEFA24C /* Geist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Bold.otf"; sourceTree = "<group>"; };
+		E407417DDF7AED0CEA8A93C7 /* FluxKeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxKeychainService.swift; sourceTree = "<group>"; };
+		E87B34F160F12F99487C8EBF /* FluxProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxProfile.swift; sourceTree = "<group>"; };
+		EB3869D2724157B072174DD2 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		ED40652D94C558FC7F7063D4 /* flux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFC7863777E1C78FF2194188 /* FluxMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxMonitorService.swift; sourceTree = "<group>"; };
+		F3407C3F6C559B6CDD3798B3 /* FluxBiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxBiometricAuthService.swift; sourceTree = "<group>"; };
+		F4C4A32D868D2658FBF9924E /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		FBAC2CC3E354589B40C756A3 /* FoundationModelsBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationModelsBackend.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D76F37CBCCC30AF3BA828A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BEF8A7631F7E8DF3ADC0FDD9 /* fluxApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		16232FAE1E3A17901D447A2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED40652D94C558FC7F7063D4 /* flux.app */,
+				922EF1659926B432B75112E1 /* fluxWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D5B60845DA07AEE239C1ED6 = {
+			isa = PBXGroup;
+			children = (
+				22EDEB128B9048743B8318E5 /* Sources */,
+				16232FAE1E3A17901D447A2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22EDEB128B9048743B8318E5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E6AC4984165A296F686663F2 /* flux */,
+				5E655DFCEF6CF3BEFD190F4E /* fluxWidgets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		306DE679513059FFF0AA4321 /* WeProtect */ = {
+			isa = PBXGroup;
+			children = (
+				87A17F8323C00E7E0869089A /* WeProtectView.swift */,
+			);
+			path = WeProtect;
+			sourceTree = "<group>";
+		};
+		5C3EC76985983D7EC36D9000 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1D7894420B4BAA3ABFBC0F69 /* FluxBackendClient.swift */,
+				F3407C3F6C559B6CDD3798B3 /* FluxBiometricAuthService.swift */,
+				D12F98D073EB153F1A594E39 /* FluxEventQueue.swift */,
+				E407417DDF7AED0CEA8A93C7 /* FluxKeychainService.swift */,
+				8940554DD7FFA73B76D26323 /* FluxLiveActivityManager.swift */,
+				68072E34AB6B7A913A21C70E /* FluxMockScenarios.swift */,
+				EFC7863777E1C78FF2194188 /* FluxMonitorService.swift */,
+				C8B72A00338597182D816140 /* FluxRiskActivityAttributes.swift */,
+				FBAC2CC3E354589B40C756A3 /* FoundationModelsBackend.swift */,
+				91750AC974A8FA9B4D0F5846 /* PairingModels.swift */,
+				EB3869D2724157B072174DD2 /* ProfileStore.swift */,
+				4D2CDDC86C6296C5F1053135 /* ProximityPairingService.swift */,
+				4B87E7B6B62EFD9DFFA850F0 /* RuleBasedBackend.swift */,
+				7714776937100000000A0002 /* TikTokClassifierService.swift */,
+				1B61C80DAB8216632F2F4271 /* WeProtectAI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5E655DFCEF6CF3BEFD190F4E /* fluxWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				73E2800755EBD137F2ED72C3 /* FluxRiskLiveActivity.swift */,
+				C6E63E983CBBD22FD369551C /* fluxWidgets.swift */,
+				8AC0BB334657F1C2E799E6CF /* Info.plist */,
+			);
+			path = fluxWidgets;
+			sourceTree = "<group>";
+		};
+		61163117F1F15B6D2E8794C2 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				934DE48CB14E57C800A704DC /* Colors.swift */,
+				1FC0F48CE70AB43EC644655F /* FluxLiquidTabBar.swift */,
+				065E6DB66535661A798C39F3 /* Spacing.swift */,
+				D69A44754D8148E3A496B988 /* Typography.swift */,
+				83448654BCF02112FCD09511 /* VozLiquidTabBar.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		6C7FC8E5B282706688B58DCF /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				34CB3FE788DA5D48647FDCFD /* ForumView.swift */,
+				10D94D89C6E83F155189F21C /* PatternSignature3DView.swift */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		748843D9E14F369BD31ED8DD /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				764365F37F8A31283E990334 /* CameraService.swift */,
+				6C5728AE32BF1D297C16FEEF /* ScannerView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		78CE532D725E09745AEDBF1F /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				F4C4A32D868D2658FBF9924E /* CommunityView.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		82B5DCD225385FC55626B0A2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B13F6CEB5BB622BF050F32E9 /* Caveat.ttf */,
+				D00788F0D33E18BE262C3F94 /* Geist-Black.otf */,
+				D8DCB794CF7BCF250FEFA24C /* Geist-Bold.otf */,
+				71186F318DA93365AFEC89AC /* Geist-ExtraBold.otf */,
+				4EB412CE3D2597238A4828CB /* Geist-Light.otf */,
+				0E300277F2EDD83DBD8A55CE /* Geist-Medium.otf */,
+				8D18AF57EE0124B2770CA647 /* Geist-Regular.otf */,
+				A8B7507166133C5D3F8F3690 /* Geist-SemiBold.otf */,
+				B14A602028294557D776D571 /* GeistMono-Bold.otf */,
+				C8C4776CAF3E2138EDBD1A1C /* GeistMono-Medium.otf */,
+				39DA42BEADACFE85DF9C1273 /* GeistMono-Regular.otf */,
+				5AD0839A0E28D6D74731E3E9 /* Inter-Bold.otf */,
+				5EE9F5037AEE7400100EFC5F /* Inter-Medium.otf */,
+				1383F8490506E13A73145B8D /* Inter-Regular.otf */,
+				352C85E9E86AC8985564D6C2 /* Inter-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9A28214C303BC5F5765626A3 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC72AE06E353600AC3A36958 /* AlertDetailView.swift */,
+				D612B790452B064D511CDF8A /* BaselineView.swift */,
+				CA11BB22CC33DD44EE550006 /* TrendDetailView.swift */,
+				0A665EAF0C20BB4F62795E0F /* DashboardView.swift */,
+				6DDD0D99C94287EC437618CC /* ParentTabView.swift */,
+				81B872D06A11F96B93B4F7E3 /* SettingsView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A1696EF92A441AA0D5C25988 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17B08C7AD2624327EE958F89 /* Info.plist */,
+				82B5DCD225385FC55626B0A2 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BED42C0E05B0B23DFC2FCE66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAB19EBB3B9048B683132A97 /* ChildProfile.swift */,
+				E87B34F160F12F99487C8EBF /* FluxProfile.swift */,
+				8A725668E7AFB55D70F7135A /* FluxUsageEvent.swift */,
+				9271419AFD165AA76E6294D2 /* PatternFootprint.swift */,
+				4AD844CEBE98B07FE5F343C8 /* Signal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8F7EBD5FF79DB7B960DA1D4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B387051E5986AC467E6BEC0E /* ProfilePickerView.swift */,
+				CA11BB22CC33DD44EE550002 /* CreateProfileSheet.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		DF6B6329879E7245E7DF7D5C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C09BC6702942E9D1DAC7863F /* OnboardingFlow.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E6AC4984165A296F686663F2 /* flux */ = {
+			isa = PBXGroup;
+			children = (
+				0D76F37CBCCC30AF3BA828A7 /* App */,
+				ED814E4F73FDE322F64EB55B /* Core */,
+				61163117F1F15B6D2E8794C2 /* Design */,
+				E7642764B84EE8A20AC16B5F /* Features */,
+				BED42C0E05B0B23DFC2FCE66 /* Models */,
+				A1696EF92A441AA0D5C25988 /* Resources */,
+			);
+			path = flux;
+			sourceTree = "<group>";
+		};
+		E7642764B84EE8A20AC16B5F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7EBD5FF79DB7B960DA1D4 /* Auth */,
+				78CE532D725E09745AEDBF1F /* Community */,
+				9A28214C303BC5F5765626A3 /* Dashboard */,
+				6C7FC8E5B282706688B58DCF /* Forum */,
+				DF6B6329879E7245E7DF7D5C /* Onboarding */,
+				748843D9E14F369BD31ED8DD /* Scanner */,
+				ED1EF447B411D21F91D498E5 /* Voz */,
+				306DE679513059FFF0AA4321 /* WeProtect */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		ED1EF447B411D21F91D498E5 /* Voz */ = {
+			isa = PBXGroup;
+			children = (
+				1183B19A852CD96B01CA9171 /* ProximityPairingView.swift */,
+				743DBCD6C151C34EE93956D2 /* VozBuzonView.swift */,
+				CA11BB22CC33DD44EE550004 /* VozSettingsSheet.swift */,
+				96553D0BC0B4932B8B270266 /* VozTabView.swift */,
+			);
+			path = Voz;
+			sourceTree = "<group>";
+		};
+		ED814E4F73FDE322F64EB55B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FD276043E9E874A01CAF2495 /* Extensions */,
+				5C3EC76985983D7EC36D9000 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FD276043E9E874A01CAF2495 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42FD3B259F39AFEC09308A8F /* flux */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4E1690A2C4645884A18789 /* Build configuration list for PBXNativeTarget "flux" */;
+			buildPhases = (
+				B89166F6319138EB9561DFE1 /* Sources */,
+				2BA7B862F9E36144F1AB48C5 /* Resources */,
+				950C8273846B02ED05D9C556 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B16D116C5E7C4A761DDD4E6 /* PBXTargetDependency */,
+			);
+			name = flux;
+			packageProductDependencies = (
+			);
+			productName = flux;
+			productReference = ED40652D94C558FC7F7063D4 /* flux.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0B47DA3A64F50B0E4794EF7 /* fluxWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE708DBD9A602702430F7484 /* Build configuration list for PBXNativeTarget "fluxWidgets" */;
+			buildPhases = (
+				9A1B5431B176005D7BA4B0E0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fluxWidgets;
+			packageProductDependencies = (
+			);
+			productName = fluxWidgets;
+			productReference = 922EF1659926B432B75112E1 /* fluxWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B6E56BD70C18E40311E17F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 37509B9DBC968B86D04C0F2B /* Build configuration list for PBXProject "flux" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1D5B60845DA07AEE239C1ED6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 16232FAE1E3A17901D447A2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42FD3B259F39AFEC09308A8F /* flux */,
+				D0B47DA3A64F50B0E4794EF7 /* fluxWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BA7B862F9E36144F1AB48C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F9BE253A9744E2FBBE016FC /* Caveat.ttf in Resources */,
+				3F2EB5D678F076C58FF0F9E6 /* Geist-Black.otf in Resources */,
+				6763C68AA8BF5BC96FCB2F5E /* Geist-Bold.otf in Resources */,
+				1AEBE38626714C777EE48F6A /* Geist-ExtraBold.otf in Resources */,
+				06B65A34E6AA0E631F4DBAEE /* Geist-Light.otf in Resources */,
+				FDD492142B122478A9AD2110 /* Geist-Medium.otf in Resources */,
+				5E39FB7DEEBE3846ABDEE6B1 /* Geist-Regular.otf in Resources */,
+				ECB92844FCA1E6080712DCBB /* Geist-SemiBold.otf in Resources */,
+				E1334A635509D676B04B7CF3 /* GeistMono-Bold.otf in Resources */,
+				3BDD5CF77F8084701D87E0A2 /* GeistMono-Medium.otf in Resources */,
+				09942F46C598725E13B092A9 /* GeistMono-Regular.otf in Resources */,
+				983341466A9D75C67DBC31C5 /* Inter-Bold.otf in Resources */,
+				E89E668120926BB020FB8552 /* Inter-Medium.otf in Resources */,
+				B0352BA3423BD67DB8840F2C /* Inter-Regular.otf in Resources */,
+				5E90940C1DE44A0344142CAD /* Inter-SemiBold.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A1B5431B176005D7BA4B0E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C215AB986481844E337DBF67 /* Colors.swift in Sources */,
+				B0CDAED31EBEB001D29419B6 /* FluxRiskActivityAttributes.swift in Sources */,
+				D9D2975E26E33714930B1218 /* FluxRiskLiveActivity.swift in Sources */,
+				7BCAE3F22E9AA7E0F402A756 /* Typography.swift in Sources */,
+				0FE556F5063E59502F612904 /* fluxWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89166F6319138EB9561DFE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97128FFA964526867E583B09 /* AlertDetailView.swift in Sources */,
+				AD9743383BB9B06F551E09FE /* BaselineView.swift in Sources */,
+				CA11BB22CC33DD44EE550005 /* TrendDetailView.swift in Sources */,
+				87F9DAFA5BBF97B75344148A /* CameraService.swift in Sources */,
+				2AD045AE977391416BC90757 /* ChildProfile.swift in Sources */,
+				0B2546596F0FB015245CE28E /* Colors.swift in Sources */,
+				CFC0A24AEE9E46AB8BD6F40F /* CommunityView.swift in Sources */,
+				5AAC26F08DED7200CF6C8F27 /* DashboardView.swift in Sources */,
+				D51981B580EC4AF272CDB2A3 /* FluxBackendClient.swift in Sources */,
+				8395ACDC1C59C317113473AC /* FluxBiometricAuthService.swift in Sources */,
+				4BAAE14728BFC1313F74FD01 /* FluxEventQueue.swift in Sources */,
+				D3FBC74FB08187F43662C565 /* FluxKeychainService.swift in Sources */,
+				43B27F9365FDB49F69332517 /* FluxLiquidTabBar.swift in Sources */,
+				C1D13B2EBCAA8D5244700502 /* FluxLiveActivityManager.swift in Sources */,
+				E8E6069644AB7FADA7E305DE /* FluxMockScenarios.swift in Sources */,
+				1ECB3B35F612779BE41A7AAD /* FluxMonitorService.swift in Sources */,
+				154F66D233CA15DB8980B41D /* FluxProfile.swift in Sources */,
+				8FCFA92912FF6EE971ADB406 /* FluxRiskActivityAttributes.swift in Sources */,
+				A9F5BB3559AB400BA6770000 /* FluxUsageEvent.swift in Sources */,
+				7976EEDDBB20B62FB94DD030 /* ForumView.swift in Sources */,
+				FC45256D901195ECCE9474B9 /* FoundationModelsBackend.swift in Sources */,
+				76710BA44ED3B6481EF24A90 /* OnboardingFlow.swift in Sources */,
+				81158C95D70287602120656B /* PairingModels.swift in Sources */,
+				C968C6F0C678A373ABE20DED /* ParentTabView.swift in Sources */,
+				B1C1875F8C45905D1F24C4A1 /* PatternFootprint.swift in Sources */,
+				3E28F172B7A55EEBFF6DC9DC /* PatternSignature3DView.swift in Sources */,
+				DF4D8DB60FD75649ED5765B9 /* ProfilePickerView.swift in Sources */,
+				CA11BB22CC33DD44EE550001 /* CreateProfileSheet.swift in Sources */,
+				E2EC497CA1655FCBAEB6E825 /* ProfileStore.swift in Sources */,
+				168CD582939A122FAD15F353 /* ProximityPairingService.swift in Sources */,
+				88A86402E7ECF7C6D68839CF /* ProximityPairingView.swift in Sources */,
+				BE5BEDE7CA35A286F222E942 /* RuleBasedBackend.swift in Sources */,
+				7714776937100000000A0001 /* TikTokClassifierService.swift in Sources */,
+				58EAD4E3BB5486A8AF8B2C27 /* ScannerView.swift in Sources */,
+				CA6A5470E25519C7E2470CC0 /* SettingsView.swift in Sources */,
+				30B6D2CBE24E9B4362C7E498 /* Signal.swift in Sources */,
+				D91E399F4C8308B1E00B5374 /* Spacing.swift in Sources */,
+				58C8E1757797C79AE9775ED9 /* Typography.swift in Sources */,
+				038AA3BA79AB4540DD040654 /* VozBuzonView.swift in Sources */,
+				CA11BB22CC33DD44EE550003 /* VozSettingsSheet.swift in Sources */,
+				A257CFCC0FB9AB82A141C0B6 /* VozLiquidTabBar.swift in Sources */,
+				ACCF1B5ECB24E937AB27B8E6 /* VozTabView.swift in Sources */,
+				7863B8525BA2C1DB6E399935 /* WeProtectAI.swift in Sources */,
+				B66EB6CC91A2B23AD6213FB6 /* WeProtectView.swift in Sources */,
+				6811F595745068E53B9F97CE /* fluxApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B16D116C5E7C4A761DDD4E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0B47DA3A64F50B0E4794EF7 /* fluxWidgets */;
+			targetProxy = 85DABE19E68C27A8E07723D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C5FBA5A514A1DEA6365B4E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = C3J94P53RR;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/flux/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emiliocruz4.flux;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1FDB806E13BB9877F71B7C7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3B18CFAE36A7765F8FBBC2B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = C3J94P53RR;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/flux/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emiliocruz4.flux;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5FF91ACB22282D5945C1202E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7164E906EB2605CFE184072D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = C3J94P53RR;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/fluxWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emiliocruz4.flux.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A3A06CD7A1DBCE36647D45EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = C3J94P53RR;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/fluxWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emiliocruz4.flux.widgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37509B9DBC968B86D04C0F2B /* Build configuration list for PBXProject "flux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FF91ACB22282D5945C1202E /* Debug */,
+				1FDB806E13BB9877F71B7C7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AC4E1690A2C4645884A18789 /* Build configuration list for PBXNativeTarget "flux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C5FBA5A514A1DEA6365B4E6 /* Debug */,
+				3B18CFAE36A7765F8FBBC2B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AE708DBD9A602702430F7484 /* Build configuration list for PBXNativeTarget "fluxWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7164E906EB2605CFE184072D /* Debug */,
+				A3A06CD7A1DBCE36647D45EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B6E56BD70C18E40311E17F7 /* Project object */;
+}

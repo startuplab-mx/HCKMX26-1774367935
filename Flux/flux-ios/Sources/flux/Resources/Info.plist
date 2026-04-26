@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>flux</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FLUX_BACKEND_URL</key>
+	<string>http://127.0.0.1:8000</string>
+	<key>FLUX_TIKTOK_BACKEND_URL</key>
+	<string>http://127.0.0.1:8000</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>flux usa Bluetooth para pairing por proximidad entre el teléfono del padre y el del menor, sin pasar por internet.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>flux usa Bluetooth para ofrecer la invitación de flux voz al teléfono del menor cuando están cerca.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>flux usa la cámara para escanear conversaciones, documentos e imágenes. El análisis es on-device, nada se sube.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>flux usa Face ID para proteger tu sesión y que nadie más pueda ver los datos de tu familia.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>flux usa la red local para sincronizar con dispositivos cercanos de tu familia.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>flux voz usa el micrófono para grabar notas de voz en tu buzón silencioso. Todo queda cifrado en tu teléfono.</string>
+	<key>NSNearbyInteractionUsageDescription</key>
+	<string>flux usa Nearby Interaction para sincronizar tu caso con un dispositivo cercano de confianza, sin pasar por internet.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>flux puede analizar capturas de pantalla o imágenes que tú decidas subir. Nunca accede sin tu permiso.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Geist-Regular.otf</string>
+		<string>Geist-Medium.otf</string>
+		<string>Geist-SemiBold.otf</string>
+		<string>Geist-Bold.otf</string>
+		<string>Geist-ExtraBold.otf</string>
+		<string>Geist-Black.otf</string>
+		<string>GeistMono-Regular.otf</string>
+		<string>GeistMono-Medium.otf</string>
+		<string>GeistMono-Bold.otf</string>
+		<string>Inter-Regular.otf</string>
+		<string>Inter-Medium.otf</string>
+		<string>Inter-SemiBold.otf</string>
+		<string>Inter-Bold.otf</string>
+		<string>Caveat.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>BaseBG</string>
+	</dict>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+		<string>arkit</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

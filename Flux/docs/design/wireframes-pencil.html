@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>flux · Wireframes pencil v4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --paper: #F5F1E8;
+    --paper-2: #EDE8DA;
+    --ink: #1A1D23;
+    --ink-2: #4A4A4A;
+    --ink-3: #8A8A8A;
+    --note: #A0341F;
+    --note-2: #4A6B3F;
+    --accent: #0F766E;
+    --voz: #FAF6EE;
+  }
+
+  body {
+    font-family: 'Kalam', sans-serif;
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px;
+    color: var(--ink);
+    padding: 64px 48px 160px;
+    min-height: 100vh;
+  }
+
+  .canvas { max-width: 1440px; margin: 0 auto; }
+
+  header { margin-bottom: 80px; position: relative; }
+  .tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  h1 span {
+    display: inline-block;
+    border-bottom: 4px solid var(--ink);
+    padding-bottom: 4px;
+    transform: rotate(-1deg);
+  }
+  .sub {
+    font-family: 'Kalam', sans-serif;
+    font-size: 20px;
+    color: var(--ink-2);
+    max-width: 720px;
+    line-height: 1.4;
+  }
+  .legend {
+    margin-top: 32px;
+    display: flex;
+    gap: 24px;
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    color: var(--ink-2);
+    flex-wrap: wrap;
+  }
+  .legend div { display: flex; align-items: center; gap: 8px; }
+  .legend .dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 1.5px solid var(--ink);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px 80px;
+  }
+
+  .frame-wrap { position: relative; }
+  .frame-label {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .frame-label .num {
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    color: var(--ink-3);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+  }
+  .frame-label .badge {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--accent);
+    background: rgba(15,118,110,0.1);
+    padding: 2px 10px;
+    border-radius: 100px;
+    border: 1.5px solid var(--accent);
+    font-weight: 700;
+  }
+  .frame-label .badge.voz {
+    color: #8B5E3C;
+    background: #F3E8D5;
+    border-color: #8B5E3C;
+  }
+  .frame-label .badge.new {
+    color: #A0341F;
+    background: #F8D7D0;
+    border-color: #A0341F;
+  }
+  .frame-desc {
+    font-family: 'Kalam', sans-serif;
+    font-size: 15px;
+    color: var(--ink-2);
+    margin-bottom: 20px;
+    max-width: 380px;
+  }
+
+  .phone {
+    width: 340px;
+    min-height: 720px;
+    background: #FAFAF7;
+    border: 2.5px solid var(--ink);
+    border-radius: 36px;
+    padding: 24px 20px;
+    position: relative;
+    box-shadow:
+      3px 3px 0 rgba(26,29,35,0.08),
+      6px 6px 0 rgba(26,29,35,0.04);
+  }
+  .phone.voz { background: var(--voz); }
+  .phone.scan { background: #1F1F23; border-color: #1F1F23; }
+  .phone.scan-voz { background: #3A2D20; border-color: #3A2D20; }
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 20px;
+    background: var(--ink);
+    border-radius: 100px;
+  }
+  .phone.scan::before, .phone.scan-voz::before { background: #0A0A0E; }
+  .phone-content {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .sk {
+    border: 1.8px solid var(--ink);
+    border-radius: 14px;
+    padding: 14px;
+    background: #fff;
+    font-family: 'Kalam', sans-serif;
+  }
+  .sk.dashed { border-style: dashed; border-color: var(--ink-3); }
+  .sk.soft { background: var(--paper-2); }
+  .sk.fill { background: var(--ink); color: var(--paper); }
+  .sk.alert { background: #F8D7D0; border-color: #B03A2E; }
+  .sk.ok { background: #E0EDD8; border-color: #4A6B3F; }
+  .sk.warn { background: #F8EAC8; border-color: #B8860B; }
+  .sk.voz-card {
+    background: #fff;
+    border-radius: 22px;
+    border-width: 1.5px;
+    padding: 18px;
+  }
+
+  .sk-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-bottom: 6px;
+  }
+  .sk-big {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+  }
+  .sk-med {
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .sk-body {
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.35;
+  }
+  .sk-xs {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-3);
+  }
+
+  .btn {
+    border: 2px solid var(--ink);
+    padding: 14px;
+    border-radius: 100px;
+    text-align: center;
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    background: #fff;
+  }
+  .btn.fill { background: var(--ink); color: var(--paper); }
+
+  .row { display: flex; gap: 10px; align-items: center; }
+  .row.sb { justify-content: space-between; }
+  .stack-sm { display: flex; flex-direction: column; gap: 6px; }
+
+  .icon-box {
+    width: 40px; height: 40px;
+    border: 1.8px solid var(--ink);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    background: #fff;
+    flex-shrink: 0;
+  }
+  .icon-circle {
+    width: 40px; height: 40px;
+    border: 1.8px solid var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    background: var(--paper-2);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .check {
+    width: 18px; height: 18px;
+    border: 1.8px solid var(--ink);
+    border-radius: 5px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .check.on::after {
+    content: '✓';
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 20px;
+    top: -8px; left: 2px;
+    color: var(--accent);
+  }
+  .check.no { border-color: var(--note); }
+  .check.no::after {
+    content: '✕';
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 20px;
+    top: -6px; left: 2px;
+    color: var(--note);
+  }
+
+  .toggle {
+    width: 40px; height: 22px;
+    border: 1.8px solid var(--ink);
+    border-radius: 100px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    background: var(--ink);
+    border-radius: 50%;
+    top: 2px; right: 2px;
+  }
+  .toggle.off::after { right: auto; left: 2px; background: var(--ink-3); }
+
+  .score-circle {
+    width: 140px; height: 140px;
+    border: 3px solid var(--note);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    line-height: 1;
+    background: #FDF5F3;
+  }
+  .score-circle .n { font-size: 56px; font-weight: 700; color: var(--note); }
+  .score-circle .t { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.2em; color: var(--ink-2); margin-top: 4px; }
+
+  .chart {
+    height: 60px;
+    border: 1.5px dashed var(--ink-3);
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 16px;
+    border-left: 2px dashed var(--ink-3);
+    margin-left: 8px;
+  }
+  .timeline-item { position: relative; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 2px solid var(--paper);
+  }
+
+  .notes {
+    position: absolute;
+    top: 60px;
+    left: 370px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .note {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--note);
+    line-height: 1.2;
+    position: relative;
+    padding-left: 24px;
+  }
+  .note::before {
+    content: '→';
+    position: absolute;
+    left: 0; top: -2px;
+    font-size: 22px;
+  }
+  .note.ok { color: var(--note-2); }
+
+  .coming {
+    position: absolute;
+    top: 20px; right: -10px;
+    transform: rotate(6deg);
+    background: var(--paper);
+    border: 2px solid var(--note);
+    color: var(--note);
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+
+  .sect {
+    grid-column: 1 / -1;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 40px;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+  .sect-sub {
+    grid-column: 1 / -1;
+    font-family: 'Kalam', sans-serif;
+    font-size: 16px;
+    color: var(--ink-2);
+    margin-top: -28px;
+    max-width: 760px;
+  }
+  .sect-voz {
+    grid-column: 1 / -1;
+    background: var(--voz);
+    border: 2px solid #8B5E3C;
+    border-radius: 24px;
+    padding: 24px 32px;
+    margin-top: 40px;
+  }
+  .sect-voz h2 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    color: #2D2A26;
+    line-height: 1;
+  }
+  .sect-voz p {
+    font-family: 'Kalam', sans-serif;
+    font-size: 16px;
+    color: #5C5348;
+    margin-top: 8px;
+    max-width: 780px;
+    line-height: 1.4;
+  }
+
+  .footer {
+    margin-top: 120px;
+    padding-top: 32px;
+    border-top: 2px dashed var(--ink-3);
+    font-family: 'Kalam', sans-serif;
+    font-size: 16px;
+    color: var(--ink-2);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: flex;
+    gap: 4px;
+    padding: 10px 8px;
+    background: #fff;
+    border: 1.8px solid var(--ink);
+    border-radius: 20px;
+    margin-top: auto;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+  .nav div.tab {
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--ink-3);
+    flex: 1;
+    text-align: center;
+  }
+  .nav div.tab.active { color: var(--ink); font-weight: 700; }
+  .nav .nav-fab {
+    width: 52px; height: 52px;
+    background: var(--ink);
+    border-radius: 50%;
+    position: relative;
+    top: -14px;
+    border: 3px solid var(--paper);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+  }
+  .nav .nav-fab svg { width: 26px; height: 26px; stroke: var(--paper); fill: none; stroke-width: 2; }
+
+  .arrow {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    color: var(--ink);
+  }
+
+  .frame-wrap:nth-child(odd) .phone { transform: rotate(-0.4deg); }
+  .frame-wrap:nth-child(even) .phone { transform: rotate(0.3deg); }
+
+  /* SCANNER VIEW */
+  .scan-frame {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px; height: 220px;
+  }
+  .scan-frame .corner {
+    position: absolute;
+    width: 30px; height: 30px;
+    border: 3px solid var(--paper);
+  }
+  .scan-frame .corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; border-radius: 8px 0 0 0; }
+  .scan-frame .corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; border-radius: 0 8px 0 0; }
+  .scan-frame .corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; border-radius: 0 0 0 8px; }
+  .scan-frame .corner.br { bottom: 0; right: 0; border-left: none; border-top: none; border-radius: 0 0 8px 0; }
+  .scan-line {
+    position: absolute;
+    top: 50%; left: 10%; right: 10%;
+    height: 2px;
+    background: #D4E8E4;
+    opacity: 0.6;
+    border-radius: 1px;
+  }
+
+  .scan-top {
+    position: absolute;
+    top: 50px; left: 24px; right: 24px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .scan-close {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    border: 1.5px solid rgba(255,255,255,0.25);
+  }
+  .scan-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--paper);
+    background: rgba(255,255,255,0.12);
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+  }
+
+  .scan-types {
+    position: absolute;
+    top: 110px; left: 0; right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 0 24px;
+  }
+  .scan-type {
+    font-family: 'Kalam', sans-serif;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(255,255,255,0.18);
+  }
+  .scan-type.active {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+    font-weight: 700;
+  }
+
+  .scan-instruction {
+    position: absolute;
+    bottom: 220px; left: 24px; right: 24px;
+    z-index: 2;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    color: var(--paper);
+    line-height: 1.1;
+  }
+  .scan-instruction small {
+    display: block;
+    font-family: 'Kalam', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 6px;
+  }
+
+  .scan-dock {
+    position: absolute;
+    bottom: 30px; left: 24px; right: 24px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
+    padding: 16px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .scan-dock .tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Kalam', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+  }
+  .scan-dock .tool .ic {
+    width: 40px; height: 40px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--paper);
+    background: rgba(255,255,255,0.06);
+  }
+  .scan-dock .capture {
+    width: 66px; height: 66px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 4px solid rgba(255,255,255,0.4);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .scan-dock .capture::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+  }
+
+  /* QR placeholder */
+  .qr {
+    width: 140px; height: 140px;
+    margin: 0 auto;
+    background:
+      repeating-linear-gradient(90deg, var(--ink) 0 8px, #fff 8px 16px),
+      repeating-linear-gradient(0deg, var(--ink) 0 8px, #fff 8px 16px);
+    background-blend-mode: xor;
+    border: 3px solid var(--ink);
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .chat-mock {
+    background: #fff;
+    border: 1.5px solid var(--ink-3);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .chat-mock .msg {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    max-width: 80%;
+    font-family: 'Kalam', sans-serif;
+    line-height: 1.3;
+  }
+  .chat-mock .msg.them { background: var(--paper-2); align-self: flex-start; }
+  .chat-mock .msg.me { background: #D4E8E4; align-self: flex-end; }
+  .chat-mock .msg.flag {
+    position: relative;
+    outline: 2px solid var(--note);
+    outline-offset: 2px;
+  }
+  .chat-mock .msg.flag::after {
+    content: '!';
+    position: absolute;
+    top: -10px; right: -10px;
+    width: 18px; height: 18px;
+    background: var(--note);
+    color: #fff;
+    border-radius: 50%;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thread {
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1.8px solid var(--ink);
+    background: #fff;
+  }
+  .thread .title {
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .thread-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-3);
+  }
+
+  .voz-greeting {
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    font-size: 36px;
+    color: #2D2A26;
+    line-height: 1.1;
+  }
+  .voz-body {
+    font-family: 'Kalam', sans-serif;
+    font-size: 15px;
+    color: #5C5348;
+    line-height: 1.5;
+  }
+  .voz-textarea {
+    border: 1.8px dashed #8B867D;
+    border-radius: 20px;
+    padding: 18px;
+    min-height: 120px;
+    background: #fff;
+    font-family: 'Kalam', sans-serif;
+    font-size: 14px;
+    color: var(--ink-3);
+  }
+  .voz-tools {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: #fff;
+    border: 1.5px solid #C8BFAE;
+    border-radius: 18px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .voz-tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Kalam', sans-serif;
+    font-size: 11px;
+    color: #5C5348;
+  }
+  .voz-tool .ic {
+    width: 36px; height: 36px;
+    border: 1.5px solid #8B867D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 18px;
+    background: var(--paper-2);
+  }
+  .voz-tool.primary .ic {
+    background: #2D2A26;
+    border-color: #2D2A26;
+    color: var(--voz);
+    width: 52px; height: 52px;
+  }
+  .voz-tool.primary { font-weight: 700; color: #2D2A26; }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+<header>
+  <div class="tag">flux · wireframes · pencil v4 · 23 abr 2026 · 20 frames</div>
+  <h1><span>escanea,</span> analiza, actúa.</h1>
+  <p class="sub">Modo padre y modo menor "flux voz" unidos por una vista escáner central (foto, galería, archivo, link) y un foro anónimo de huellas. El escáner es el tab principal — la manera de alimentar WeProtect. Después viene análisis, y si quieres, reporte.</p>
+
+  <div class="legend">
+    <div><span class="dot"></span> UI</div>
+    <div><span class="dot" style="background:var(--note-2);border-color:var(--note-2)"></span> OK</div>
+    <div><span class="dot" style="background:var(--note);border-color:var(--note)"></span> alerta</div>
+    <div><span class="dot" style="background:#F3E8D5;border-color:#8B5E3C"></span> flux voz</div>
+    <div><span class="dot" style="background:#F8D7D0;border-color:#A0341F"></span> nuevo v4</div>
+  </div>
+</header>
+
+<div class="grid">
+
+<!-- ================ I. ONBOARDING ================ -->
+<div class="sect">I. Onboarding padre</div>
+<p class="sect-sub">Tres pantallas. El corazón es la 02: transparencia explícita de qué leemos y qué NO.</p>
+
+<!-- 01 -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">01</span> Welcome</div>
+  <div class="frame-desc">Identidad + promesa. Un solo CTA.</div>
+  <div class="phone">
+    <div class="phone-content" style="align-items:center;text-align:center;padding-top:80px;">
+      <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.3em;color:var(--ink-2);">FLUX</div>
+      <div style="font-family:'Caveat',cursive;font-weight:700;font-size:72px;line-height:0.9;margin:20px 0;">flux</div>
+      <div style="font-family:'Kalam';font-size:20px;line-height:1.3;max-width:240px;">Detecta lo que tú no ves.</div>
+      <div class="sk-body" style="margin-top:12px;max-width:240px;">Escanea una conversación, una captura o un archivo. WeProtect te dice si hay patrón de riesgo.</div>
+      <div style="width:100%;margin-top:auto;padding-top:80px;">
+        <div class="btn fill">Empezar</div>
+        <div class="sk-xs" style="margin-top:12px;">o leer cómo funciona</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">copy del sub ahora habla del escáner — feature central</div>
+    <div class="note ok">promete analizar, no "proteger" (falso)</div>
+  </div>
+</div>
+
+<!-- 02 -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">02</span> Transparencia</div>
+  <div class="frame-desc">Confianza y blindaje legal. La pantalla más importante del onboarding.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="sk-label">Paso 1 de 3</div>
+      <div class="sk-med">Qué leemos y qué no.</div>
+      <div class="sk-body">Transparencia primero. No se modifica después.</div>
+
+      <div class="sk ok" style="margin-top:8px;">
+        <div class="sk-label" style="color:var(--note-2);">SÍ LEEMOS</div>
+        <div class="stack-sm" style="margin-top:8px;">
+          <div class="row"><span class="check on"></span><span class="sk-body">Tiempo de uso por app</span></div>
+          <div class="row"><span class="check on"></span><span class="sk-body">Horarios de actividad</span></div>
+          <div class="row"><span class="check on"></span><span class="sk-body">Apps instaladas nuevas</span></div>
+          <div class="row"><span class="check on"></span><span class="sk-body">Lo que TÚ decidas escanear</span></div>
+        </div>
+      </div>
+
+      <div class="sk alert">
+        <div class="sk-label" style="color:var(--note);">NUNCA LEEMOS</div>
+        <div class="stack-sm" style="margin-top:8px;">
+          <div class="row"><span class="check no"></span><span class="sk-body">Contenido de mensajes automáticamente</span></div>
+          <div class="row"><span class="check no"></span><span class="sk-body">Fotos o videos sin tu permiso</span></div>
+          <div class="row"><span class="check no"></span><span class="sk-body">Contactos o llamadas</span></div>
+          <div class="row"><span class="check no"></span><span class="sk-body">Ubicación precisa</span></div>
+        </div>
+      </div>
+
+      <div class="btn fill" style="margin-top:8px;">Entiendo, continuar</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">lista "SÍ" actualizada con "lo que TÚ escanees" — agencia</div>
+    <div class="note ok">el "nunca" se refuerza: "automáticamente", "sin tu permiso"</div>
+  </div>
+</div>
+
+<!-- 03 -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">03</span> Perfil del menor</div>
+  <div class="frame-desc">Línea base. Sin esto el modelo no tiene referencia de "normal".</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="sk-label">Paso 3 de 3</div>
+      <div class="sk-med">¿A quién vamos a cuidar?</div>
+
+      <div class="sk">
+        <div class="sk-label">Nombre</div>
+        <div class="sk-body" style="margin-top:4px;color:var(--ink);">Lucía</div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-label">Edad</div>
+        <div class="row sb" style="margin-top:8px;">
+          <span class="sk-body">13 años</span>
+          <span class="sk-xs">▼</span>
+        </div>
+      </div>
+
+      <div class="sk soft">
+        <div class="sk-label">Apps que usa habitualmente</div>
+        <div class="sk-body" style="margin-top:4px;">calibrar "normal" para esta persona</div>
+        <div class="row" style="flex-wrap:wrap;gap:6px;margin-top:10px;">
+          <span class="sk" style="padding:4px 10px;font-size:12px;background:var(--ink);color:var(--paper);">TikTok ✓</span>
+          <span class="sk" style="padding:4px 10px;font-size:12px;background:var(--ink);color:var(--paper);">Instagram ✓</span>
+          <span class="sk" style="padding:4px 10px;font-size:12px;background:var(--ink);color:var(--paper);">WhatsApp ✓</span>
+          <span class="sk dashed" style="padding:4px 10px;font-size:12px;">Discord +</span>
+          <span class="sk dashed" style="padding:4px 10px;font-size:12px;">Roblox +</span>
+        </div>
+      </div>
+
+      <div class="sk warn">
+        <div class="sk-label" style="color:#8B5A0F;">CONSENTIMIENTO</div>
+        <div class="sk-body" style="margin-top:6px;">Recomendamos hablar con Lucía. Puedes invitarla a flux voz desde Ajustes.</div>
+      </div>
+
+      <div class="btn fill">Activar detección</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">chips de apps para la línea base</div>
+    <div class="note ok">la invitación a flux voz se gestiona desde Ajustes</div>
+  </div>
+</div>
+
+<!-- ================ II. CORE PADRE ================ -->
+<div class="sect">II. Core padre — detección</div>
+<p class="sect-sub">Dashboard (con tab bar de 5 zonas y escáner destacado), alerta, WeProtect coach.</p>
+
+<!-- 04 DASHBOARD -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">04</span> Dashboard <span class="badge new">tab bar actualizado</span></div>
+  <div class="frame-desc">Score + tendencia + señales. Tab bar con escáner central destacado (FAB).</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="row sb">
+        <div>
+          <div class="sk-xs">LUCÍA · 13 AÑOS</div>
+          <div class="sk-med" style="margin-top:4px;">Resumen de 7 días</div>
+        </div>
+        <div class="icon-box">⚙</div>
+      </div>
+
+      <div class="sk alert">
+        <div class="score-circle">
+          <div class="n">72</div>
+          <div class="t">NIVEL DE RIESGO</div>
+        </div>
+        <div class="sk-body" style="text-align:center;margin-top:10px;">3 señales activas en las últimas 48h</div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-label">Tendencia</div>
+        <div class="chart" style="margin-top:8px;">
+          <svg viewBox="0 0 300 60" preserveAspectRatio="none" style="width:100%;height:100%">
+            <polyline points="0,48 40,42 80,44 120,30 160,36 200,20 240,10 300,8" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="row sb" style="margin-top:6px;"><span class="sk-xs">LUN</span><span class="sk-xs">HOY</span></div>
+      </div>
+
+      <div class="sk-label" style="margin-top:4px;">SEÑALES ACTIVAS</div>
+
+      <div class="sk alert" style="padding:10px 14px;">
+        <div class="row sb">
+          <div>
+            <div class="sk-med" style="font-size:14px;">Transición TikTok → Discord</div>
+            <div class="sk-xs" style="margin-top:2px;">02:47 AM · hace 6h</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="sk warn" style="padding:10px 14px;">
+        <div class="row sb">
+          <div>
+            <div class="sk-med" style="font-size:14px;">App nueva: Telegram</div>
+            <div class="sk-xs" style="margin-top:2px;">ayer · 23:12</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="nav">
+        <div class="tab active">inicio</div>
+        <div class="tab">WeProtect</div>
+        <div class="nav-fab">
+          <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2" ry="2"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <div class="tab">comunidad</div>
+        <div class="tab">foro</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">tab bar ahora con 5 slots + FAB central ESCÁNER</div>
+    <div class="note ok">el FAB sobresale: patrón iOS común (Instagram, Snapchat, Cash App)</div>
+    <div class="note">tabs: inicio · WeProtect · [ESCÁNER] · comunidad · foro</div>
+    <div class="note">ajustes pasa al ⚙ del header</div>
+  </div>
+</div>
+
+<!-- 05 ALERTA -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">05</span> Alerta detalle</div>
+  <div class="frame-desc">Qué, cuándo, por qué. Explicabilidad distingue flux.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="row">
+        <span class="arrow">‹</span>
+        <span class="sk-xs" style="margin-left:8px;">VOLVER</span>
+      </div>
+
+      <div class="sk alert">
+        <div class="sk-label" style="color:var(--note);">PATRÓN · CONFIANZA 0.84</div>
+        <div class="sk-big" style="margin-top:6px;color:var(--note);">Transición sospechosa</div>
+        <div class="sk-body" style="margin-top:6px;">TikTok → Discord en &lt;30s, 3 veces esta semana, entre 2 y 4 AM.</div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-label">Línea de tiempo</div>
+        <div class="timeline" style="margin-top:12px;">
+          <div class="timeline-item">
+            <div class="sk-med" style="font-size:14px;">02:47 AM · hoy</div>
+            <div class="sk-xs">TikTok 14m → Discord 8m</div>
+          </div>
+          <div class="timeline-item">
+            <div class="sk-med" style="font-size:14px;">03:12 AM · lun</div>
+            <div class="sk-xs">TikTok 22m → Discord 14m</div>
+          </div>
+          <div class="timeline-item">
+            <div class="sk-med" style="font-size:14px;">02:30 AM · sáb</div>
+            <div class="sk-xs">TikTok 9m → Discord 18m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk soft">
+        <div class="sk-label">POR QUÉ ESTA SEÑAL</div>
+        <div class="sk-body" style="margin-top:6px;line-height:1.5;">
+          <span style="font-weight:700;">1.</span> Discord no estaba en la línea base de Lucía.<br>
+          <span style="font-weight:700;">2.</span> Transición pública → privada es patrón documentado (WeProtect 2024).<br>
+          <span style="font-weight:700;">3.</span> El horario 2–4 AM es atípico para ella.
+        </div>
+      </div>
+
+      <div class="btn fill">Preguntar a WeProtect</div>
+      <div class="btn" style="margin-top:-6px;">Marcar como revisado</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">3 bullets: modelo explica, no adivina</div>
+    <div class="note ok">fuente WeProtect → credibilidad</div>
+  </div>
+</div>
+
+<!-- 06 WEPROTECT -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">06</span> WeProtect · coach <span class="badge">IA</span></div>
+  <div class="frame-desc">3 abordajes de conversación. Tono distinto, tiempo estimado, editables.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="row">
+        <span class="arrow">‹</span>
+        <span class="sk-xs" style="margin-left:8px;">WEPROTECT · COACH</span>
+      </div>
+
+      <div class="sk-med">Cómo hablar con Lucía</div>
+      <div class="sk-body">3 abordajes. Elige el que mejor encaja con su personalidad.</div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="sk-label">OPCIÓN 1 · DIRECTA</div>
+          <div class="sk-xs">3 min</div>
+        </div>
+        <div class="sk-body" style="margin-top:8px;font-style:italic;">
+          "Oye, vi que has estado usando Discord de noche. No quiero invadir tu espacio, pero me preocupa que no duermas bien. ¿Todo OK con las personas con las que hablas ahí?"
+        </div>
+        <div class="row" style="gap:6px;margin-top:10px;">
+          <span class="sk" style="padding:3px 8px;font-size:11px;background:var(--paper-2);">sin acusar</span>
+          <span class="sk" style="padding:3px 8px;font-size:11px;background:var(--paper-2);">cuidado</span>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="sk-label">OPCIÓN 2 · CONTEXTO</div>
+          <div class="sk-xs">5 min</div>
+        </div>
+        <div class="sk-body" style="margin-top:8px;font-style:italic;">"Leí algo sobre cómo mucha gente nueva se conoce por Discord ahora. ¿Tú cómo lo usas? Me gustaría entenderlo..."</div>
+      </div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="sk-label">OPCIÓN 3 · ESPEJO</div>
+          <div class="sk-xs">2 min</div>
+        </div>
+        <div class="sk-body" style="margin-top:8px;font-style:italic;">"Yo también me desvelo viendo videos. Me gustó mucho este de X. ¿Qué ves tú a esa hora?"</div>
+      </div>
+
+      <div class="sk dashed">
+        <div class="sk-xs">✨ Generado por WeProtect · editable antes de usar</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">3 tonos distintos</div>
+    <div class="note ok">"Generado por WeProtect" → honestidad en README</div>
+  </div>
+</div>
+
+<!-- ================ III. EXPANSIÓN PADRE ================ -->
+<div class="sect">III. Expansión padre — escáner, análisis, reporte, comunidad</div>
+<p class="sect-sub">Tres pantallas. Escáner es la tab central. Tras captura viene análisis. Tras análisis, opcionalmente, reporte.</p>
+
+<!-- 07 ESCANER PADRE (NUEVO) -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">07</span> Escáner <span class="badge new">nuevo</span></div>
+  <div class="frame-desc">Vista cámara full-screen. Tipo de objeto arriba, dock con galería/captura/archivo abajo.</div>
+  <div class="phone scan">
+    <div class="scan-top">
+      <div class="scan-close">×</div>
+      <div class="scan-tag">WEPROTECT · ANALIZARÁ</div>
+      <div class="scan-close" style="font-size:18px;">⚡</div>
+    </div>
+
+    <div class="scan-types">
+      <div class="scan-type active">chat</div>
+      <div class="scan-type">doc</div>
+      <div class="scan-type">perfil</div>
+      <div class="scan-type">link</div>
+    </div>
+
+    <div class="scan-frame">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <div class="scan-line"></div>
+    </div>
+
+    <div class="scan-instruction">
+      Apunta a una conversación,<br>captura o documento
+      <small>o usa el dock para subir desde la galería</small>
+    </div>
+
+    <div class="scan-dock">
+      <div class="tool">
+        <div class="ic">▦</div>
+        <span>galería</span>
+      </div>
+      <div class="capture"></div>
+      <div class="tool">
+        <div class="ic">📎</div>
+        <span>archivo</span>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">fondo oscuro = cámara activa; elementos UI en blanco/semi</div>
+    <div class="note ok">marco central con 4 L-shapes (esquinas) + line de escaneo</div>
+    <div class="note">4 tipos arriba: chat · doc · perfil · link (cambia el prompt de WeProtect)</div>
+    <div class="note">dock con 3 slots: galería · CAPTURA · archivo</div>
+    <div class="note">tag superior siempre visible: "WeProtect analizará"</div>
+  </div>
+</div>
+
+<!-- 08 RESULTADO + REPORTE -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">08</span> Análisis + hacer reporte <span class="badge new">flujo reporte</span></div>
+  <div class="frame-desc">Tras capturar. Highlights sobre el screenshot, match con foro, sección "hacer reporte" al final.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="row">
+        <span class="arrow">‹</span>
+        <span class="sk-xs" style="margin-left:8px;">ESCÁNER · CHAT</span>
+      </div>
+
+      <div class="sk-med">Resultado</div>
+
+      <div class="chat-mock">
+        <div class="msg them flag">mi amor, estás muy linda en esa foto 😍 mándame más?</div>
+        <div class="msg them flag">tengo un regalo que darte, ¿dónde vives?</div>
+        <div class="msg me">no sé, tal vez luego</div>
+        <div class="msg them flag">no le digas a tu mamá, es sorpresa 🤫</div>
+      </div>
+
+      <div class="sk alert" style="padding:12px;">
+        <div class="sk-label" style="color:var(--note);">RIESGO ALTO · 3 PATRONES</div>
+        <div class="stack-sm" style="margin-top:8px;">
+          <div class="row" style="align-items:flex-start;gap:8px;"><span style="font-weight:700;color:var(--note);">!</span><span class="sk-body">Elogio físico + solicitud de imágenes · <em>grooming</em></span></div>
+          <div class="row" style="align-items:flex-start;gap:8px;"><span style="font-weight:700;color:var(--note);">!</span><span class="sk-body">Oferta + ubicación · <em>pilar 1</em></span></div>
+          <div class="row" style="align-items:flex-start;gap:8px;"><span style="font-weight:700;color:var(--note);">!</span><span class="sk-body">Secreto explícito ante padres</span></div>
+        </div>
+      </div>
+
+      <div class="sk warn" style="padding:12px;">
+        <div class="sk-label" style="color:#8B5A0F;">● COINCIDE CON EL FORO · 7 CASOS</div>
+        <div class="sk-body" style="margin-top:6px;">Emojis <span style="font-family:'Geist Mono',monospace;">😍 🎁 🤫</span> y frase "no le digas a tu mamá" en 7 huellas anónimas.</div>
+        <div class="sk-xs" style="color:#8B5A0F;margin-top:6px;">→ ver casos</div>
+      </div>
+
+      <div style="border-top:2px dashed var(--ink-3);padding-top:14px;margin-top:6px;">
+        <div class="sk-med">¿Quieres hacer un reporte?</div>
+        <div class="sk-body">Ninguna acción es obligatoria. Guardar y cerrar también está bien.</div>
+      </div>
+
+      <div class="sk">
+        <div class="row" style="gap:12px;align-items:flex-start;">
+          <div class="icon-circle">F</div>
+          <div class="stack-sm" style="gap:2px;flex:1;">
+            <div class="sk-body" style="color:var(--ink);font-weight:700;">Aportar huellas al foro</div>
+            <div class="sk-xs">anónimo · solo patrones · ayuda a otras familias</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row" style="gap:12px;align-items:flex-start;">
+          <div class="icon-circle">✆</div>
+          <div class="stack-sm" style="gap:2px;flex:1;">
+            <div class="sk-body" style="color:var(--ink);font-weight:700;">Línea de Ayuda · 089</div>
+            <div class="sk-xs">24h · anónimo · gratis</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row" style="gap:12px;align-items:flex-start;">
+          <div class="icon-circle">P</div>
+          <div class="stack-sm" style="gap:2px;flex:1;">
+            <div class="sk-body" style="color:var(--ink);font-weight:700;">Derivar a profesional</div>
+            <div class="sk-xs">psicólogo infantil verificado</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row" style="gap:12px;align-items:flex-start;">
+          <div class="icon-circle">R</div>
+          <div class="stack-sm" style="gap:2px;flex:1;">
+            <div class="sk-body" style="color:var(--ink);font-weight:700;">Reporte INAI/FGR</div>
+            <div class="sk-xs">si se trata de un delito</div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </div>
+
+      <div class="btn" style="margin-top:4px;">Guardar y cerrar</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">flujo completo en una pantalla: captura → análisis → foro → reporte</div>
+    <div class="note ok">4 opciones de reporte: foro · 089 · profesional · INAI</div>
+    <div class="note">"ninguna acción es obligatoria" → baja ansiedad del padre</div>
+    <div class="note">guardar y cerrar SIEMPRE disponible — agencia</div>
+  </div>
+</div>
+
+<!-- 09 COMUNIDAD -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">09</span> Comunidad</div>
+  <div class="frame-desc">Hilos de padres que pasaron por la misma señal. Filtrado por tipo de alerta.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="sk-med">Comunidad</div>
+      <div class="sk-body">Otras familias con situaciones parecidas. Anónimo y moderado.</div>
+
+      <div class="sk soft" style="padding:10px 14px;">
+        <div class="sk-label">FILTRANDO POR</div>
+        <div class="row sb" style="margin-top:4px;">
+          <span class="sk-body" style="color:var(--ink);font-weight:700;">Transición TikTok → Discord</span>
+          <span class="sk-xs">cambiar</span>
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="row" style="margin-bottom:4px;gap:8px;">
+          <div class="icon-circle">M</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-xs" style="color:var(--ink-2);">mamá_anónima · hace 3 días</div>
+          </div>
+        </div>
+        <div class="title">"Me pasó igual con mi hijo (14)"</div>
+        <div class="sk-body">flux me marcó el mismo patrón en enero. Al principio entré en pánico, pero...</div>
+        <div class="thread-meta">
+          <span>12 respuestas</span>
+          <span>· resuelto</span>
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="row" style="margin-bottom:4px;gap:8px;">
+          <div class="icon-circle">P</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-xs" style="color:var(--ink-2);">papá_de_2 · hace 1 semana</div>
+          </div>
+        </div>
+        <div class="title">"Cómo abordé la conversación sin que se cerrara"</div>
+        <div class="sk-body">La opción 2 del WeProtect coach funcionó. Lo que hice distinto fue...</div>
+        <div class="thread-meta">
+          <span>8 respuestas</span>
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="row" style="margin-bottom:4px;gap:8px;">
+          <div class="icon-circle">T</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-xs" style="color:var(--ink-2);">tutora_reciente · hace 2 semanas</div>
+          </div>
+        </div>
+        <div class="title">"Al final era un grupo del colegio"</div>
+        <div class="sk-body">Falso positivo real. Dejen que la conversación respire antes de actuar.</div>
+        <div class="thread-meta">
+          <span>3 respuestas</span>
+          <span>· falso positivo</span>
+        </div>
+      </div>
+
+      <div class="btn fill">Compartir mi experiencia</div>
+      <div class="sk-xs" style="text-align:center;">anónimo · moderado por StartupLab</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">filtro automático por señal del padre</div>
+    <div class="note ok">tags "resuelto" / "falso positivo" dan realismo</div>
+  </div>
+</div>
+
+<!-- ================ IV. MODO MENOR ================ -->
+<div class="sect-voz">
+  <h2>IV. Modo menor — flux voz</h2>
+  <p>Siete frames. El escáner voz también es tab central, con skin cálido. Flow: activación → buzón → escáner → coincidencia → foro → mi caso → guardado + hacer reporte. Tono pasivo, sin alarmas. Persiste hasta borrar datos.</p>
+</div>
+
+<!-- 10 ACTIVACION -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">10</span> Activación <span class="badge voz">flux voz</span></div>
+  <div class="frame-desc">Llega por link/QR. Primer contacto cercano, sin burocracia.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#8B5E3C;">FLUX · VOZ</div>
+
+      <div class="voz-greeting" style="margin-top:20px;">hola.<br>estás en tu espacio.</div>
+
+      <div class="voz-body" style="margin-top:16px;">
+        Alguien confiable te invitó aquí.<br>Este lugar es tuyo. Nadie más puede entrar.
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">¿QUÉ ES ESTO?</div>
+        <div class="voz-body" style="margin-top:8px;">
+          Un lugar privado para escribir, escanear o guardar cosas que te inquieten.<br><br>
+          Lo que dejes acá se queda acá hasta que <em>tú</em> decidas hacer algo.
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">NADIE VE ESTO SIN QUE TÚ QUIERAS</div>
+        <div class="voz-body" style="margin-top:8px;">
+          Ni tus papás, ni el colegio, ni nosotros. Solo tú.
+        </div>
+      </div>
+
+      <div class="btn fill" style="background:#2D2A26;color:var(--voz);">Entrar</div>
+      <div class="sk-xs" style="text-align:center;color:#8B867D;">una vez dentro, flux voz se queda en este teléfono</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">saludo neutral "estás en tu espacio" (antes: "no estás sola")</div>
+    <div class="note ok">menciona ahora "escribir, escanear o guardar"</div>
+  </div>
+</div>
+
+<!-- 11 BUZON -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">11</span> Buzón silencioso <span class="badge voz">flux voz</span></div>
+  <div class="frame-desc">Texto + tools. El botón escáner vive aquí y en el tab bar central.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div class="row sb">
+        <div class="voz-greeting" style="font-size:28px;">buenas noches</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:10px;color:#8B867D;">MI · 23:47</div>
+      </div>
+
+      <div class="voz-body">cuéntame sin apuro. lo que quieras.</div>
+
+      <div class="voz-textarea">
+        escribe aquí...<br><br>
+        (puede ser una frase, un párrafo, o nada)
+      </div>
+
+      <div class="voz-tools">
+        <div class="voz-tool primary">
+          <div class="ic" style="width:48px;height:48px;font-size:22px;">⊡</div>
+          <span>escanear</span>
+        </div>
+        <div class="voz-tool">
+          <div class="ic">🎙</div>
+          <span>voz</span>
+        </div>
+        <div class="voz-tool">
+          <div class="ic">📎</div>
+          <span>archivo</span>
+        </div>
+        <div class="voz-tool">
+          <div class="ic">✎</div>
+          <span>dibujo</span>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">WEPROTECT · OPCIONAL</div>
+        <div class="voz-body" style="margin-top:6px;">
+          si quieres, reviso lo que subas y te digo si veo algo raro. tú decides.
+        </div>
+        <div class="row" style="gap:8px;margin-top:10px;">
+          <span class="sk" style="padding:4px 12px;font-size:12px;border-color:#8B5E3C;">sí, revísalo</span>
+          <span class="sk" style="padding:4px 12px;font-size:12px;border-color:#8B867D;background:transparent;color:#5C5348;">no, solo guardar</span>
+        </div>
+      </div>
+
+      <div class="btn" style="background:#2D2A26;color:var(--voz);border-color:#2D2A26;">guardar aquí</div>
+
+      <div class="nav" style="background:#fff;border-color:#C8BFAE;">
+        <div class="tab active" style="color:#2D2A26;">buzón</div>
+        <div class="tab" style="color:#8B867D;">foro</div>
+        <div class="nav-fab" style="background:#2D2A26;border-color:var(--voz);">
+          <svg viewBox="0 0 24 24" style="stroke:var(--voz);"><rect x="4" y="5" width="16" height="14" rx="2" ry="2"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <div class="tab" style="color:#8B867D;">mi caso</div>
+        <div class="tab" style="color:#8B867D;">ayuda</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">el botón ESCANEAR está destacado (primary) entre los 4 tools</div>
+    <div class="note ok">tab bar modo menor: buzón · foro · [ESCÁNER] · mi caso · ayuda</div>
+    <div class="note">skin: fondo cálido, nav bar con border más suave</div>
+  </div>
+</div>
+
+<!-- 12 ESCANER VOZ (NUEVO) -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">12</span> Escáner voz <span class="badge voz">flux voz</span> <span class="badge new">nuevo</span></div>
+  <div class="frame-desc">Misma estructura que el escáner padre pero con tono cálido y mensajes sin jerga.</div>
+  <div class="phone scan-voz">
+    <div class="scan-top">
+      <div class="scan-close" style="background:rgba(250,246,238,0.15);border-color:rgba(250,246,238,0.25);color:var(--voz);">×</div>
+      <div class="scan-tag" style="background:rgba(250,246,238,0.12);border-color:rgba(250,246,238,0.2);color:var(--voz);font-family:'Caveat',cursive;font-size:14px;letter-spacing:0;text-transform:none;">solo tú lo vas a ver</div>
+      <div class="scan-close" style="font-size:18px;background:rgba(250,246,238,0.15);border-color:rgba(250,246,238,0.25);color:var(--voz);">⚡</div>
+    </div>
+
+    <div class="scan-types">
+      <div class="scan-type" style="background:rgba(250,246,238,0.12);border-color:rgba(250,246,238,0.2);color:rgba(250,246,238,0.7);">chat</div>
+      <div class="scan-type" style="background:rgba(250,246,238,0.12);border-color:rgba(250,246,238,0.2);color:rgba(250,246,238,0.7);">imagen</div>
+      <div class="scan-type active" style="background:var(--voz);color:#3A2D20;border-color:var(--voz);">perfil</div>
+      <div class="scan-type" style="background:rgba(250,246,238,0.12);border-color:rgba(250,246,238,0.2);color:rgba(250,246,238,0.7);">link</div>
+    </div>
+
+    <div class="scan-frame">
+      <div class="corner tl" style="border-color:var(--voz);"></div>
+      <div class="corner tr" style="border-color:var(--voz);"></div>
+      <div class="corner bl" style="border-color:var(--voz);"></div>
+      <div class="corner br" style="border-color:var(--voz);"></div>
+      <div class="scan-line" style="background:#E8D5B0;"></div>
+    </div>
+
+    <div class="scan-instruction" style="color:var(--voz);font-size:26px;">
+      escanea lo que te incomoda
+      <small style="color:rgba(250,246,238,0.7);">sin apuro · sin juicio</small>
+    </div>
+
+    <div class="scan-dock" style="background:rgba(250,246,238,0.1);border-color:rgba(250,246,238,0.2);">
+      <div class="tool">
+        <div class="ic" style="color:var(--voz);border-color:rgba(250,246,238,0.3);background:rgba(250,246,238,0.06);">▦</div>
+        <span style="color:rgba(250,246,238,0.8);">galería</span>
+      </div>
+      <div class="capture" style="background:var(--voz);border-color:rgba(250,246,238,0.4);">
+        <div style="position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:2px solid #3A2D20;border-radius:50%;"></div>
+      </div>
+      <div class="tool">
+        <div class="ic" style="color:var(--voz);border-color:rgba(250,246,238,0.3);background:rgba(250,246,238,0.06);">📎</div>
+        <span style="color:rgba(250,246,238,0.8);">archivo</span>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">fondo marrón cálido (no negro) — diferencia del escáner padre</div>
+    <div class="note ok">tag superior en Caveat: "solo tú lo vas a ver" (no jerga técnica)</div>
+    <div class="note">instrucción: "escanea lo que te incomoda · sin apuro · sin juicio"</div>
+    <div class="note">tipos: chat · imagen · perfil · link (sin "doc")</div>
+  </div>
+</div>
+
+<!-- 13 COINCIDENCIA -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">13</span> Coincidencia detectada <span class="badge voz">flux voz</span></div>
+  <div class="frame-desc">Tras escanear, WeProtect cruza huellas. Si hay match: pantalla suave, nunca alarma.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#8B5E3C;">WEPROTECT · REVISIÓN</div>
+
+      <div class="voz-greeting" style="margin-top:12px;">alguien más<br>pasó por esto.</div>
+      <div class="voz-body" style="margin-top:8px;">no estás en esto sola. 3 personas reportaron un patrón parecido.</div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">COINCIDEN CONTIGO</div>
+        <div class="row" style="gap:10px;margin-top:10px;flex-wrap:wrap;">
+          <span class="sk" style="padding:5px 12px;font-size:12px;border-color:#8B5E3C;background:#F3E8D5;font-family:'Geist Mono',monospace;">😍 🎁 🤫</span>
+          <span class="sk" style="padding:5px 12px;font-size:12px;border-color:#8B5E3C;background:#F3E8D5;">"no le digas a nadie"</span>
+          <span class="sk" style="padding:5px 12px;font-size:12px;border-color:#8B5E3C;background:#F3E8D5;">TikTok → Discord</span>
+          <span class="sk" style="padding:5px 12px;font-size:12px;border-color:#8B5E3C;background:#F3E8D5;">noche</span>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">CASO #47 · HACE 2 MESES</div>
+          <div class="sk-xs" style="color:var(--note-2);">● resuelto</div>
+        </div>
+        <div class="voz-body" style="margin-top:6px;">Empezó con mensajes dulces, después pedía fotos. Al final lo reportaron. Derivado a FGR.</div>
+        <div class="sk-xs" style="margin-top:8px;color:#8B867D;">me pasó también · 12</div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">CASO #62 · HACE 3 SEMANAS</div>
+          <div class="sk-xs" style="color:#B8860B;">● revisado</div>
+        </div>
+        <div class="voz-body" style="margin-top:6px;">Era alguien del colegio haciéndose pasar por otra persona. Falso perfil.</div>
+        <div class="sk-xs" style="margin-top:8px;color:#8B867D;">me pasó también · 4</div>
+      </div>
+
+      <div class="btn" style="background:#2D2A26;color:var(--voz);border-color:#2D2A26;">ver todos los casos</div>
+      <div class="btn" style="background:transparent;border-color:#8B867D;color:#5C5348;">leer más tarde</div>
+
+      <div class="sk-xs" style="text-align:center;color:#8B867D;margin-top:4px;">todo anónimo · sin nombres · sin identidades</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">"alguien más pasó por esto" · nunca "¡ALERTA!"</div>
+    <div class="note ok">chips de huellas: emojis + frases + plataforma + horario</div>
+    <div class="note">CTA secundario "leer más tarde" — el menor controla ritmo</div>
+  </div>
+</div>
+
+<!-- 14 FORO -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">14</span> Foro de patrones <span class="badge voz">flux voz</span> <span class="badge">modo padre</span></div>
+  <div class="frame-desc">Lista anónima de casos. Solo huellas. Accesible desde ambos modos.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div class="voz-greeting" style="font-size:28px;">foro de patrones</div>
+      <div class="voz-body">casos anónimos. sin nombres, sin identidades.</div>
+
+      <div class="sk soft" style="padding:10px 14px;background:#F3E8D5;border-color:#8B5E3C;">
+        <div class="sk-label" style="color:#8B5E3C;">FILTROS</div>
+        <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap;">
+          <span class="sk" style="padding:3px 10px;font-size:11px;background:#2D2A26;color:var(--voz);border:none;">todos</span>
+          <span class="sk" style="padding:3px 10px;font-size:11px;">Discord</span>
+          <span class="sk" style="padding:3px 10px;font-size:11px;">TikTok</span>
+          <span class="sk" style="padding:3px 10px;font-size:11px;">Roblox</span>
+          <span class="sk" style="padding:3px 10px;font-size:11px;">Instagram</span>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">#47 · TIKTOK → DISCORD</div>
+          <div class="sk-xs" style="color:var(--note-2);">● resuelto</div>
+        </div>
+        <div class="row" style="gap:4px;margin-top:8px;flex-wrap:wrap;">
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;font-family:'Geist Mono',monospace;">😍</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;font-family:'Geist Mono',monospace;">🎁</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;font-family:'Geist Mono',monospace;">🤫</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">elogio</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">regalo</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">noche</span>
+        </div>
+        <div class="voz-body" style="margin-top:8px;">"empezó con cumplidos, después pidió fotos..."</div>
+        <div class="row sb" style="margin-top:8px;">
+          <div class="sk-xs">me pasó también · 12</div>
+          <div class="sk-xs" style="color:#8B5E3C;">leer →</div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">#62 · INSTAGRAM</div>
+          <div class="sk-xs" style="color:#B8860B;">● revisado</div>
+        </div>
+        <div class="row" style="gap:4px;margin-top:8px;flex-wrap:wrap;">
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">perfil falso</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">edad alterada</span>
+        </div>
+        <div class="voz-body" style="margin-top:8px;">"decía tener 16, después supe que era alguien del colegio..."</div>
+        <div class="row sb" style="margin-top:8px;">
+          <div class="sk-xs">me pasó también · 4</div>
+          <div class="sk-xs" style="color:#8B5E3C;">leer →</div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">#73 · ROBLOX</div>
+          <div class="sk-xs" style="color:#B8860B;">● derivado</div>
+        </div>
+        <div class="row" style="gap:4px;margin-top:8px;flex-wrap:wrap;">
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">robux</span>
+          <span class="sk" style="padding:2px 8px;font-size:10px;background:#F3E8D5;border-color:#8B5E3C;">"amigo especial"</span>
+        </div>
+        <div class="voz-body" style="margin-top:8px;">"me ofreció robux si le mandaba fotos..."</div>
+        <div class="row sb" style="margin-top:8px;">
+          <div class="sk-xs">me pasó también · 9</div>
+          <div class="sk-xs" style="color:#8B5E3C;">leer →</div>
+        </div>
+      </div>
+
+      <div class="sk-xs" style="text-align:center;color:#8B867D;margin-top:4px;">WeProtect censura nombres, @ de redes y datos personales automáticamente</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">huellas como chips: emojis + frases + método</div>
+    <div class="note ok">estados con color: resuelto / revisado / derivado</div>
+    <div class="note">badge doble: mismo frame accesible desde padre y menor</div>
+  </div>
+</div>
+
+<!-- 15 MI CASO + CHAT -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">15</span> Mi caso + chat anónimo <span class="badge voz">flux voz</span></div>
+  <div class="frame-desc">Timeline de estado. Chat anónimo con censura automática en tiempo real.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div class="row">
+        <span class="arrow" style="color:#2D2A26;">‹</span>
+        <span class="sk-xs" style="margin-left:8px;color:#8B867D;">FORO</span>
+      </div>
+
+      <div class="voz-greeting" style="font-size:28px;">tu caso · #104</div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">ESTADO</div>
+        <div class="timeline" style="margin-top:12px;border-color:#C8BFAE;">
+          <div class="timeline-item">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">enviado</div>
+            <div class="sk-xs">ayer · 23:47</div>
+          </div>
+          <div class="timeline-item">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">revisado por WeProtect</div>
+            <div class="sk-xs">hoy · 02:14</div>
+          </div>
+          <div class="timeline-item">
+            <div class="sk-body" style="color:#B8860B;font-weight:700;">derivado a línea 089</div>
+            <div class="sk-xs">hoy · 09:32 · si tú aceptas</div>
+          </div>
+          <div class="timeline-item" style="opacity:0.5;">
+            <div class="sk-body">resuelto</div>
+            <div class="sk-xs">pendiente</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">HABLAR CON ALGUIEN QUE PASÓ POR ESTO</div>
+        <div class="voz-body" style="margin-top:6px;">anónimo por ambos lados · WeProtect censura datos personales en tiempo real</div>
+
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="align-self:flex-start;max-width:75%;background:var(--paper-2);padding:8px 12px;border-radius:14px 14px 14px 4px;font-size:12px;font-family:'Kalam',sans-serif;color:#2D2A26;">hola. vi que pasaste por algo parecido.</div>
+          <div style="align-self:flex-end;max-width:75%;background:#D4E8E4;padding:8px 12px;border-radius:14px 14px 4px 14px;font-size:12px;font-family:'Kalam',sans-serif;color:#2D2A26;">sí. fue hace 3 meses. al final lo denuncié.</div>
+          <div style="align-self:flex-start;max-width:80%;background:var(--paper-2);padding:8px 12px;border-radius:14px 14px 14px 4px;font-size:12px;font-family:'Kalam',sans-serif;color:#2D2A26;">mi ig es <span style="background:#2D2A26;color:var(--voz);padding:0 6px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:10px;">[censurado]</span></div>
+          <div style="align-self:flex-start;max-width:75%;background:#F8EAC8;border:1px dashed #8B5A0F;padding:6px 10px;border-radius:12px;font-size:10px;font-family:'Geist Mono',monospace;color:#8B5A0F;">↑ WeProtect ocultó @handle</div>
+          <div style="align-self:flex-end;max-width:75%;background:#D4E8E4;padding:8px 12px;border-radius:14px 14px 4px 14px;font-size:12px;font-family:'Kalam',sans-serif;color:#2D2A26;">gracias. con eso basta por hoy.</div>
+        </div>
+
+        <div class="sk dashed" style="margin-top:12px;padding:10px;border-color:#8B867D;">
+          <div class="sk-body" style="color:#8B867D;">escribe algo...</div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-label" style="color:#8B5E3C;">OPCIONAL</div>
+        <div class="row" style="gap:10px;align-items:center;margin-top:8px;">
+          <div class="check on"></div>
+          <div class="voz-body">Aportar mis huellas al foro cuando mi caso se cierre.</div>
+        </div>
+        <div class="sk-xs" style="margin-top:8px;color:#8B867D;">solo huellas · sin nombres · sin identificarte</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">timeline de 4 estados · transparencia total</div>
+    <div class="note">mensaje censurado visible → demo del filtro en vivo</div>
+    <div class="note ok">opt-in al final: aportar huellas cuando el caso se cierre</div>
+  </div>
+</div>
+
+<!-- 16 GUARDADO + HACER REPORTE (movido aquí, renombrado) -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">16</span> Guardado + hacer reporte <span class="badge voz">flux voz</span> <span class="badge new">flujo reporte</span></div>
+  <div class="frame-desc">Historial de guardados + opciones de acción pasivas. Espejo del frame 08 del padre, con tono voz.</div>
+  <div class="phone voz">
+    <div class="phone-content">
+      <div class="voz-greeting" style="font-size:28px;">lo que has guardado</div>
+      <div class="voz-body">3 cosas. solo tú las ves.</div>
+
+      <div class="sk voz-card">
+        <div class="row sb">
+          <div class="sk-xs" style="color:#8B867D;">ANOCHE · 23:47</div>
+          <div class="sk-xs" style="color:#8B5E3C;">● revisado por WeProtect</div>
+        </div>
+        <div class="voz-body" style="margin-top:6px;">"me mandó un mensaje raro otra vez, esta vez me pidió..."</div>
+        <div class="row" style="gap:6px;margin-top:10px;flex-wrap:wrap;">
+          <span class="sk" style="padding:3px 10px;font-size:11px;background:#F3E8D5;border-color:#8B5E3C;color:#8B5E3C;">patrón detectado</span>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-xs" style="color:#8B867D;">MARTES · 16:20</div>
+        <div class="voz-body" style="margin-top:6px;">"captura de la conversación..."</div>
+        <div class="row" style="gap:6px;margin-top:6px;">
+          <span class="sk-xs">📎 screenshot.jpg</span>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="sk-xs" style="color:#8B867D;">LUN · 21:03</div>
+        <div class="voz-body" style="margin-top:6px;">[nota de voz · 1:24]</div>
+      </div>
+
+      <div style="border-top:1.5px dashed #C8BFAE;margin-top:12px;padding-top:16px;">
+        <div class="voz-greeting" style="font-size:24px;">si quieres, esto es lo que puedes hacer</div>
+        <div class="voz-body" style="margin-top:4px;">sin apuro. cuando tú decidas.</div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row" style="gap:12px;align-items:center;">
+          <div class="icon-circle" style="border-color:#8B5E3C;background:#F3E8D5;">F</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">Aportar mi huella al foro</div>
+            <div class="sk-xs">anónimo · ayuda a alguien más</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row" style="gap:12px;align-items:center;">
+          <div class="icon-circle" style="border-color:#8B5E3C;background:#F3E8D5;">✆</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">Línea de Ayuda · 089</div>
+            <div class="sk-xs">24 horas · anónimo · gratis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row" style="gap:12px;align-items:center;">
+          <div class="icon-circle" style="border-color:#8B5E3C;background:#F3E8D5;">♡</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">Compartir con un adulto</div>
+            <div class="sk-xs">tú eliges quién y qué compartir</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk voz-card">
+        <div class="row" style="gap:12px;align-items:center;">
+          <div class="icon-circle" style="border-color:#8B5E3C;background:#F3E8D5;">R</div>
+          <div class="stack-sm" style="gap:2px;">
+            <div class="sk-body" style="color:#2D2A26;font-weight:700;">Reporte anónimo</div>
+            <div class="sk-xs">INAI · sin dar tu nombre</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">movido al final del modo menor: es el punto de cierre del flow</div>
+    <div class="note ok">4 opciones de reporte (espejo del padre): foro · 089 · adulto · INAI</div>
+    <div class="note">tono: "si quieres..." "cuando tú decidas..." — nunca obligación</div>
+    <div class="note">orden: 1ero foro (nueva V4), después 089, adulto, INAI</div>
+  </div>
+</div>
+
+<!-- ================ V. SOPORTE ================ -->
+<div class="sect">V. Soporte padre</div>
+<p class="sect-sub">Ajustes y línea base.</p>
+
+<!-- 17 AJUSTES -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">17</span> Ajustes</div>
+  <div class="frame-desc">Toggles por señal. Generar invitación flux voz. Exportar datos. Aviso legal visible.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="sk-med">Ajustes</div>
+
+      <div class="sk-label" style="margin-top:6px;">SEÑALES MONITOREADAS</div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="stack-sm">
+            <span class="sk-body" style="font-weight:700;">Transiciones de plataforma</span>
+            <span class="sk-xs">Saltos sospechosos entre apps</span>
+          </div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="stack-sm">
+            <span class="sk-body" style="font-weight:700;">Horarios atípicos</span>
+            <span class="sk-xs">Actividad nocturna anómala</span>
+          </div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="stack-sm">
+            <span class="sk-body" style="font-weight:700;">Instalaciones reactivas</span>
+            <span class="sk-xs">Mensajería tras uso intenso de red</span>
+          </div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="stack-sm">
+            <span class="sk-body" style="font-weight:700;">Aislamiento digital</span>
+            <span class="sk-xs">Abandono repentino de apps</span>
+          </div>
+          <div class="toggle off"></div>
+        </div>
+      </div>
+
+      <div class="sk-label" style="margin-top:6px;">WEPROTECT</div>
+
+      <div class="sk">
+        <div class="row sb">
+          <div class="stack-sm">
+            <span class="sk-body" style="font-weight:700;">Análisis automático al escanear</span>
+            <span class="sk-xs">WeProtect revisa capturas al subirlas</span>
+          </div>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="sk-label" style="margin-top:6px;">FLUX VOZ</div>
+
+      <div class="sk dashed"><div class="sk-body">Generar invitación a flux voz para Lucía</div></div>
+      <div class="sk dashed"><div class="sk-body">Revocar acceso flux voz</div></div>
+
+      <div class="sk-label" style="margin-top:6px;">DATOS Y PRIVACIDAD</div>
+
+      <div class="sk dashed"><div class="sk-body">Exportar datos de Lucía</div></div>
+      <div class="sk dashed"><div class="sk-body">Borrar todo el historial</div></div>
+      <div class="sk dashed"><div class="sk-body" style="color:var(--note);">Aviso de privacidad · LFPDPPP</div></div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">"Generar invitación" + "Revocar acceso" en sección propia</div>
+    <div class="note ok">toggle "análisis automático al escanear" — opt-in</div>
+  </div>
+</div>
+
+<!-- 18 LINEA BASE -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">18</span> Línea base</div>
+  <div class="frame-desc">"¿Cómo se ve un día normal?" Evita que toda alerta se sienta grave.</div>
+  <div class="phone">
+    <div class="phone-content">
+      <div class="row">
+        <span class="arrow">‹</span>
+        <span class="sk-xs" style="margin-left:8px;">INICIO</span>
+      </div>
+
+      <div class="sk-med">Día normal de Lucía</div>
+      <div class="sk-body">Así se ve su actividad habitual. Cualquier desvío es lo que flux detecta.</div>
+
+      <div class="sk soft">
+        <div class="sk-label">HORARIOS DE USO</div>
+        <div class="chart" style="margin-top:8px;height:80px;">
+          <svg viewBox="0 0 300 80" preserveAspectRatio="none" style="width:100%;height:100%">
+            <rect x="10" y="50" width="15" height="20" fill="#0F766E" opacity="0.3"/>
+            <rect x="40" y="30" width="15" height="40" fill="#0F766E" opacity="0.5"/>
+            <rect x="70" y="20" width="15" height="50" fill="#0F766E" opacity="0.7"/>
+            <rect x="100" y="35" width="15" height="35" fill="#0F766E" opacity="0.5"/>
+            <rect x="130" y="25" width="15" height="45" fill="#0F766E" opacity="0.6"/>
+            <rect x="160" y="15" width="15" height="55" fill="#0F766E" opacity="0.8"/>
+            <rect x="190" y="25" width="15" height="45" fill="#0F766E" opacity="0.6"/>
+            <rect x="220" y="45" width="15" height="25" fill="#0F766E" opacity="0.3"/>
+            <rect x="250" y="60" width="15" height="10" fill="#0F766E" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="row sb" style="margin-top:4px;">
+          <span class="sk-xs">6am</span>
+          <span class="sk-xs">12pm</span>
+          <span class="sk-xs">6pm</span>
+          <span class="sk-xs">12am</span>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="sk-label">APPS MÁS USADAS</div>
+        <div class="stack-sm" style="margin-top:10px;">
+          <div class="row sb"><span class="sk-body">TikTok</span><span class="sk-xs">2h 14m / día</span></div>
+          <div class="row sb"><span class="sk-body">Instagram</span><span class="sk-xs">1h 02m / día</span></div>
+          <div class="row sb"><span class="sk-body">WhatsApp</span><span class="sk-xs">48m / día</span></div>
+          <div class="row sb"><span class="sk-body">YouTube</span><span class="sk-xs">32m / día</span></div>
+        </div>
+      </div>
+
+      <div class="sk ok">
+        <div class="sk-label" style="color:var(--note-2);">OBSERVACIÓN</div>
+        <div class="sk-body" style="margin-top:4px;">Últimos 30 días su patrón ha sido estable. El cambio reciente genera alerta.</div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">sin alarma — dashboard educativo</div>
+    <div class="note ok">observación textual: explica por qué hay/no hay alerta</div>
+  </div>
+</div>
+
+<!-- ================ VI. ROADMAP ================ -->
+<div class="sect">VI. Roadmap — mockup</div>
+<p class="sect-sub">No se construyen. Wireframes para el entregable 4 de la convocatoria.</p>
+
+<!-- 19 CHAT PROFESIONAL -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">19</span> Chat profesional <span class="num" style="color:var(--note);">· roadmap Q3</span></div>
+  <div class="frame-desc">Padre conecta con psicólogo/especialista cuando WeProtect o la comunidad no bastan.</div>
+  <div class="phone">
+    <div class="coming">próximamente</div>
+    <div class="phone-content" style="opacity:0.7;">
+      <div class="sk-med">Hablar con un profesional</div>
+      <div class="sk-body">Conecta con psicólogos infantiles verificados. 30 min desde $450 MXN.</div>
+
+      <div class="sk">
+        <div class="row">
+          <div class="icon-box">DM</div>
+          <div>
+            <div class="sk-med" style="font-size:15px;">Dra. Mariana López</div>
+            <div class="sk-xs">Psicología adolescente · 12 años exp.</div>
+            <div class="sk-xs" style="color:var(--note-2);margin-top:4px;">● Disponible ahora</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk">
+        <div class="row">
+          <div class="icon-box">RV</div>
+          <div>
+            <div class="sk-med" style="font-size:15px;">Lic. Roberto Vega</div>
+            <div class="sk-xs">Seguridad digital infantil</div>
+            <div class="sk-xs" style="margin-top:4px;">disponible 18:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk dashed">
+        <div class="sk-body">Compartir alerta con el profesional (opcional)</div>
+      </div>
+
+      <div class="btn fill">Agendar sesión</div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">monetización: marketplace de profesionales</div>
+  </div>
+</div>
+
+<!-- 20 PORTAL ESCUELAS -->
+<div class="frame-wrap">
+  <div class="frame-label"><span class="num">20</span> Portal escuelas <span class="num" style="color:var(--note);">· roadmap Q4</span></div>
+  <div class="frame-desc">Dashboard agregado para colegios. Tendencias poblacionales, sin individuos.</div>
+  <div class="phone">
+    <div class="coming">próximamente</div>
+    <div class="phone-content" style="opacity:0.7;">
+      <div class="sk-med">Secundaria Benito Juárez</div>
+      <div class="sk-xs">287 familias inscritas</div>
+
+      <div class="sk warn">
+        <div class="sk-label">ALERTA AGREGADA · 2° GRADO</div>
+        <div class="sk-body" style="margin-top:6px;">Incremento de 34% en señales de tipo "aislamiento digital" esta semana.</div>
+      </div>
+
+      <div class="sk soft">
+        <div class="sk-label">TENDENCIAS</div>
+        <div class="stack-sm" style="margin-top:8px;">
+          <div class="row sb"><span class="sk-body">Transiciones sospechosas</span><span class="sk-xs">↑ 12%</span></div>
+          <div class="row sb"><span class="sk-body">Horarios atípicos</span><span class="sk-xs">↑ 8%</span></div>
+          <div class="row sb"><span class="sk-body">Aislamiento digital</span><span class="sk-xs" style="color:var(--note);">↑ 34%</span></div>
+        </div>
+      </div>
+
+      <div class="sk dashed"><div class="sk-body">Programar sesión informativa</div></div>
+      <div class="sk dashed"><div class="sk-body">Descargar reporte mensual</div></div>
+    </div>
+  </div>
+  <div class="notes">
+    <div class="note">datos anonimizados, agregados por grado</div>
+    <div class="note ok">B2B real: SEP, colegios privados</div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div>flux · wireframes-pencil.html · v4 · 20 frames</div>
+  <div>siguiente → magic MCP → componentes SwiftUI pulidos</div>
+</div>
+
+</div>
+</body>
+</html>
