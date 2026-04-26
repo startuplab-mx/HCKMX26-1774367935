@@ -1,0 +1,102 @@
+name: flux
+options:
+  bundleIdPrefix: com.emiliocruz
+  deploymentTarget:
+    iOS: "18.2"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: ""
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+
+targets:
+  flux:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/flux
+        excludes:
+          - "**/*.md"
+    resources:
+      - path: Sources/flux/Resources/Fonts
+        optional: true
+    info:
+      path: Sources/flux/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: flux
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen:
+          UIColorName: BaseBG
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - arm64
+          - arkit
+        NSCameraUsageDescription: flux usa la cámara para escanear conversaciones, documentos e imágenes. El análisis es on-device, nada se sube.
+        NSMicrophoneUsageDescription: flux voz usa el micrófono para grabar notas de voz en tu buzón silencioso. Todo queda cifrado en tu teléfono.
+        NSPhotoLibraryUsageDescription: flux puede analizar capturas de pantalla o imágenes que tú decidas subir. Nunca accede sin tu permiso.
+        NSNearbyInteractionUsageDescription: flux usa Nearby Interaction para sincronizar tu caso con un dispositivo cercano de confianza, sin pasar por internet.
+        NSLocalNetworkUsageDescription: flux usa la red local para sincronizar con dispositivos cercanos de tu familia.
+        NSBluetoothAlwaysUsageDescription: flux usa Bluetooth para pairing por proximidad entre el teléfono del padre y el del menor, sin pasar por internet.
+        NSBluetoothPeripheralUsageDescription: flux usa Bluetooth para ofrecer la invitación de flux voz al teléfono del menor cuando están cerca.
+        NSSupportsLiveActivities: true
+        NSFaceIDUsageDescription: flux usa Face ID para proteger tu sesión y que nadie más pueda ver los datos de tu familia.
+        FLUX_BACKEND_URL: http://127.0.0.1:8000
+        UIAppFonts:
+          - Geist-Regular.otf
+          - Geist-Medium.otf
+          - Geist-SemiBold.otf
+          - Geist-Bold.otf
+          - Geist-ExtraBold.otf
+          - Geist-Black.otf
+          - GeistMono-Regular.otf
+          - GeistMono-Medium.otf
+          - GeistMono-Bold.otf
+          - Inter-Regular.otf
+          - Inter-Medium.otf
+          - Inter-SemiBold.otf
+          - Inter-Bold.otf
+          - Caveat.ttf
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.emiliocruz.flux
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Sources/flux/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SUPPORTS_MACCATALYST: NO
+    dependencies:
+      - target: fluxWidgets
+
+  fluxWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Sources/fluxWidgets
+      - path: Sources/flux/Core/Services/FluxRiskActivityAttributes.swift
+      - path: Sources/flux/Design/Colors.swift
+      - path: Sources/flux/Design/Typography.swift
+    info:
+      path: Sources/fluxWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: flux Widgets
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.emiliocruz.flux.widgets
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Sources/fluxWidgets/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: YES
+
