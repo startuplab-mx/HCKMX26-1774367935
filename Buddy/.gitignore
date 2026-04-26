@@ -1,0 +1,33 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# xcodegen output (regenerable)
+buddy-ios/buddy.xcodeproj
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+Package.pins
+Package.resolved
+
+# macOS
+.DS_Store
+
+# secrets
+.env
+.env.local
+*.p8
+*.p12
+*.mobileprovision
+
+# misc
+*.log
+.venv/
+.sprite_cache/

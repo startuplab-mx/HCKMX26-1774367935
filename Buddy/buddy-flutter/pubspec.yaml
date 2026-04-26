@@ -1,0 +1,44 @@
+name: buddy
+description: Buddy — Tamagotchi moderno con personajes en pixel art (Flutter + Flame).
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flame: ^1.18.0
+  shared_preferences: ^2.2.3
+  audioplayers: ^6.0.0
+  flutter_local_notifications: ^17.2.2
+  uuid: ^4.4.0
+  overlay_pop_up: ^1.0.6+6
+  http: ^1.2.2
+  receive_sharing_intent: ^1.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+dependency_overrides:
+  overlay_pop_up:
+    path: local_plugins/overlay_pop_up
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sprites/
+    - assets/backgrounds/
+    - assets/sources/
+    - assets/phrases.json
+
+  fonts:
+    - family: Pix3M
+      fonts:
+        - asset: assets/sources/font_Pix3M_ccby/alagard_by_pix3m-d6awiwp.ttf
+        - asset: assets/sources/font_Pix3M_ccby/_bitmap_font____romulus_by_pix3m-d6aokem.ttf

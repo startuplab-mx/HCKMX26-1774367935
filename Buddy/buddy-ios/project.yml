@@ -1,0 +1,81 @@
+name: buddy
+options:
+  bundleIdPrefix: com.emiliocruz
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: ""
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+
+targets:
+  buddy:
+    type: application
+    platform: iOS
+    scheme: {}
+    sources:
+      - path: Sources/buddy
+        excludes:
+          - "**/*.md"
+    info:
+      path: Sources/buddy/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Buddy
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen:
+          UIColorName: SceneBG
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - arm64
+        NSSupportsLiveActivities: true
+        UIStatusBarHidden: true
+        UIViewControllerBasedStatusBarAppearance: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.emiliocruz.buddy
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Sources/buddy/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SUPPORTS_MACCATALYST: NO
+        CODE_SIGN_ENTITLEMENTS: Sources/buddy/Resources/buddy.entitlements
+    dependencies:
+      - target: buddyWidgets
+
+  buddyWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Sources/buddyWidgets
+      - path: Sources/buddy/Core/LiveActivity/BuddyActivityAttributes.swift
+      - path: Sources/buddy/Models/PetAction.swift
+      - path: Sources/buddy/Design/Theme.swift
+      - path: Sources/buddy/Resources/Assets.xcassets
+    info:
+      path: Sources/buddyWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: Buddy Widgets
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.emiliocruz.buddy.widgets
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Sources/buddyWidgets/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: YES
